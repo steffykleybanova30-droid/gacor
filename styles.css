@@ -97,30 +97,6 @@ body {
   background-position: center;
 }
 
-/* video jadi background */
-.bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-/* teks di atas video */
-.hero-content {
-  padding: 1.4rem 7%;
-  max-width: 60rem;
-  position: absolute;
-  z-index: 2;
-  color: #fff;
-  text-align: center;
-  right: 10%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 .hero-content h1 {
   font-size: 5em;
   color: #fff;
