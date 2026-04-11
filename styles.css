@@ -87,6 +87,7 @@ body {
 }
 
 .hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -109,16 +110,11 @@ body {
 /* teks di atas video */
 .hero-content {
   position: relative;
-  z-index: 1;
-  height: 100vh;
-  margin-top: 80px;
-  overflow: hidden;
-  padding: 100px 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 2;
+  color: #fff;
   text-align: left;
-  color: white;
+  top: 40%;
+  transform: translateY(-50%);
 }
 
 .hero::after {
