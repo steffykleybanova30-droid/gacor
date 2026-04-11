@@ -87,14 +87,12 @@ body {
 }
 
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   background-repeat: repeat;
   background-size: cover;
   background-position: center;
-  position: relative;
-  overflow: hidden;
 }
 
 /* video jadi background */
@@ -122,6 +120,7 @@ body {
   align-items: center;
   text-align: center;
   color: white;
+
 }
 
 .hero::before {
