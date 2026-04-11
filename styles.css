@@ -87,7 +87,7 @@ body {
 }
 
 .hero {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   background-repeat: repeat;
@@ -111,8 +111,9 @@ body {
 /* teks di atas video */
 .hero-content {
   position: relative;
-  z-index: 1;
-  height: 100%;
+  z-index: 2;
+  height: 100vh;
+  overflow: hidden;
 
   display: flex;
   justify-content: center;
