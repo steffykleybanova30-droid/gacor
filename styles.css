@@ -87,6 +87,7 @@ body {
 }
 
 .hero {
+  height: 100vh;
   display: flex;
   align-items: center;
   background-repeat: repeat;
