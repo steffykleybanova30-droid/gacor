@@ -109,11 +109,12 @@ body {
 
 /* teks di atas video */
 .hero-content {
-  position: relative;
+  position: absolute;
   z-index: 2;
   color: #fff;
-  text-align: left;
-  top: 40%;
+  text-align: center;
+  right: 10%;
+  top: 50%;
   transform: translateY(-50%);
 }
 
