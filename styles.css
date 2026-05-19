@@ -1,4 +1,3 @@
-```css
 :root {
   --primary: #8acefc;
   --bg: #0a0836;
@@ -13,7 +12,7 @@
 
 body {
   font-family: "Black Ops One", sans-serif;
-  background-color: var(--bg);
+  background: var(--bg);
   color: white;
 }
 
@@ -30,9 +29,7 @@ body {
   align-items: center;
 
   padding: 1.4rem 7%;
-
-  background: rgba(0, 0, 0, 0.8);
-  border-bottom: 1px solid white;
+  background: rgba(0,0,0,0.8);
 
   z-index: 9999;
 }
@@ -54,11 +51,6 @@ body {
 .navbar-nav a {
   color: white;
   margin: 0 1rem;
-  font-size: 1.2rem;
-}
-
-.navbar-nav a:hover {
-  color: var(--primary);
 }
 
 .navbar-extra a {
@@ -76,10 +68,6 @@ body {
   position: relative;
 }
 
-.dropbtn {
-  color: white;
-}
-
 .dropdown-content {
   display: none;
 
@@ -87,18 +75,13 @@ body {
   top: 100%;
   left: 0;
 
+  background: rgba(0,0,0,0.9);
   min-width: 180px;
-
-  background: rgba(0, 0, 0, 0.9);
-
-  border-radius: 8px;
-  overflow: hidden;
 }
 
 .dropdown-content a {
   display: block;
   padding: 1rem;
-  margin: 0;
 }
 
 .dropdown:hover .dropdown-content {
@@ -113,65 +96,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  position: relative;
-  overflow: hidden;
 }
 
-.video-bg {
-  position: absolute;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  z-index: -1;
-}
-
-.hero-content {
-  text-align: center;
-
-  background: rgba(0, 150, 255, 0.25);
-
-  padding: 2rem;
-  border-radius: 20px;
-
-  backdrop-filter: blur(10px);
-}
-
-.hero-content h1 {
-  font-size: 4rem;
-}
-
-.hero-content span {
-  color: var(--primary);
-}
-
-.hero-content p {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-}
-
-.cta {
-  display: inline-block;
-
-  margin-top: 2rem;
-  padding: 0.8rem 2rem;
-
-  background: #1e47b8;
-  color: white;
-
-  border-radius: 10px;
-}
-
-/* Tablet */
+/* Mobile */
 
 @media (max-width: 768px) {
-
-  html {
-    font-size: 75%;
-  }
 
   #hamburger-menu {
     display: inline-block;
@@ -186,7 +115,7 @@ body {
     width: 80vw;
     height: 100vh;
 
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0,0,0,0.95);
 
     display: flex;
     flex-direction: column;
@@ -206,14 +135,4 @@ body {
     font-size: 1.5rem;
   }
 
-  .dropdown {
-    width: 100%;
-  }
-
-  .dropdown-content {
-    position: static;
-    width: 100%;
-    margin-top: 1rem;
-  }
 }
-```
