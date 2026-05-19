@@ -1,5 +1,3 @@
-```javascript
-// Hamburger Menu
 const navbarNav = document.querySelector(".navbar-nav");
 
 document.querySelector("#hamburger-menu").onclick = (e) => {
