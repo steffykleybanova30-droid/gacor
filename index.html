@@ -5,127 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Klock SMAN 71</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Black+Ops+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
+    
+    
     />
 
     <!-- Feather Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css"
-    />
+    <script src="https://unpkg.com/feather-icons"></script>
 
-    <!-- My Style -->
+    <!-- My styles -->
     <link rel="stylesheet" href="styles.css" />
   </head>
-
   <body>
-
-    <!-- Navbar Start -->
-     <nav class="navbar">
-      <a href="#" class="navbar-logo">Klock<span>SMAN71</span>.</a>
+    <!-- Navbar start -->
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">Klock<span>SMAN 71</span></a>
 
       <div class="navbar-nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#profil">Profil</a>
-        <a href="#project">Project</a>
-        <a href="#contact">Contact</a>
-
+        <a href="index.html#">Home</a>
+        <a href="index.html#about">About</a>
+        <div class="dropdown">
+          <a href="javascript:void(0);" class="dropbtn">Profil <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="profil.html"><i class="fas fa-users"></i> Kel. 4</a>
+            <a href="profil.steffy.html"><i class="fas fa-user"></i> Steffy</a>
+            <a href="profil.seina.html"><i class="fas fa-user"></i> Seina</a>
+            <a href="profil.priscilla.html"><i class="fas fa-user"></i> Priscilla</a>
+            <a href="profil.emily.html"><i class="fas fa-user"></i> Emily</a>
+          </div>
+        </div>
+        <a href="product.html">Product</a>
+        <a href="index.html#contact">Contact</a>
       </div>
-      </span></a>
-     </nav>
 
-    <!-- Navbar End -->
-    
-        <!-- Hero Section Start -->
-    <section class="hero" id="home">
-      <video autoplay muted loop="bg-video">
-        <source src="vid home fix.mp4" type="video/mp4">
+      <div class="navbar-extra">
+        <a href="#" id="search"><i data-feather="search"></i></a>
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- Hero Section start -->
+    <section class="hero">
+      <video autoplay loop muted playsinline class="video-bg">
+        <source src="img/vid home fix.mp4" type="video/mp4" />
       </video>
 
-      <main class="hero-content">
-        <h1>Welcome To <br><span>Uniform</span> Schedule</h1>
-        <p>Pastikan seragam Anda sesuai dengan ketentuan yang berlaku </p>
+      <div class="hero-content">
+        <h1>
+          Welcome to <br />
+          <span>Uniform</span> Schedule
+        </h1>
+        <p>
+          Pastikan seragam Anda sesuai <br />
+          dengan ketentuan yang berlaku!
+        </p>
         <a href="#" class="cta">Cek Jadwal</a>
-      </main>
-
+      </div>
     </section>
-    <!-- Hero Section End -->
-    
-    <!-- About Section Start -->
-    <section class="about" id="about">
-        <h2><span>Latar</span> Belakang</h2>
+    <!-- Hero Section end -->
+
+    <!-- About Section start -->
+    <section id="about" class="about">
+      <h2><span>Latar</span> Belakang</h2>
+
+      <div class="row">
+        <div class="about-img">
+          <img src="img/logo_klock-removebg-preview.png" alt="About" />
+        </div>
+        <div class="content">
+          <h3>Apa itu Klock SMAN 71?</h3>
+          <p>
+            Klock SMAN 71 hadir sebagai solusi atas kebingungan siswa terkait
+            jadwal seragam yang sering tidak jelas atau terlambat. Melalui
+            panduan visual yang terstruktur, platform ini memudahkan siswa
+            memahami ketentuan berpakaian secara akurat sekaligus meminimalisir
+            pelanggaran akibat miskomunikasi.
+          </p>
+        </div>
+      </div>
+      <div class="about-member">
+        <h4>Our<span> Member</span></h4>
+        <p>
+          Tim Klock SMAN 71 terdiri dari beberapa anggota yang memiliki tugas
+          masing-masing dalam pembuatan platform ini.
+        </p>
 
         <div class="row">
-          <div class="about-img">
-            <img src="71 (1).jpg">
+          <div class="member-card">
+            <img src="img/71 (2).jpg" alt="Member 1" class="member-card-img"> 
+            <h5 class="member-card-title">~ Emily Mikaela ~</h5>
+            <p class="member-card-desc">Content Writer</p>
           </div>
-          <div class="content">
-            <h3>Apa itu Klock SMAN 71?</h3>
-            <p>????????</p>
+          <div class="member-card">
+            <img src="img/71 (2).jpg" alt="Member 2" class="member-card-img"> 
+            <h5 class="member-card-title">~ Steffy Gwayneth ~</h5>
+            <p class="member-card-desc">Programmer</p>
           </div>
-        </div>
+          <div class="member-card">
+            <img src="img/71 (2).jpg" alt="Member 3" class="member-card-img"> 
+            <h5 class="member-card-title">~ Seina Ernes ~</h5>
+            <p class="member-card-desc">Graphic Design</p>
+          </div>
+          <div class="member-card">
+            <img src="img/71 (2).jpg" alt="Member 4" class="member-card-img"> 
+            <h5 class="member-card-title">~ Priscilla Mutiara ~</h5>
+            <p class="member-card-desc">Web Developer</p>
+          </div>
       </div>
     </section>
 
-    <!-- About Section End -->
-
-    <!-- Profile Section Start -->
-     
-    <section class="profil" id="profil">
-      <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="https://www.canva.com/design/DAHGYhz6AP0/OmuaDVmGWE5fZTfhF90oyA/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-  </iframe>
-</div>
-
-    <footer>
-      <div class="contact" id="contact">
-        <div class="row">
-          <div class="col-md-4">
-              <div class="footer-col">
-                <div class="brand">
-                  <img src="logo.png" alt="Logo">
-                  <h1>SMA Negeri 71 Jakarta</h1>
-                </div>
-                <p class="tentang">?????</p>
-                <ul>
-                  <li><a href=""><i class="fab fa-facebook"></i></a></li>
-                  <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                  <li><a href=""><i class="fa fa-youtube"></i></a></li>
-                </ul>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="footer-col">
-                <h2>Kontak</h2>
-                <p class="alamat">???</p>
-                <ul>
-                  <li><i class="fas fa-phone"></i> Telp/Fax: ??? </li>
-                  <li><i class="fas fa-envelope"></i> Email: ??? </li>
-                </ul>
-          </div>
-          <div class="col-md-4">
-            <div class="footer-col">
-              <h2>Alamat</h2>
-              <p class="alamat">???</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <!-- About Section end -->
 
     <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
     <script>
       feather.replace();
     </script>
+
+    <!-- My JavaScript -->
+    <script src="script.js"></script>
   </body>
 </html>
+

@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Klock SMAN 71</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Black+Ops+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- My styles -->
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /*background utama website*/
+      body {
+        background-color: var(--bg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+      /*Wadah Utama Aplikasi*/
+      .main-card {
+        background-color: rgba(43, 58, 85, 0.95);
+        border-radius: 20px;
+        width: 100%;
+        max-width: 900px;
+        padding: 40px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        color: #fff;
+        margin: 80px auto 40px auto;
+      }
+
+      /*Judul Utama*/
+      .main-card h1 {
+        font-size: 3.3rem;
+        font-weight: 900;
+        margin-bottom: 5px;
+        letter-spacing: 0.5px;
+      }
+
+      /*Subtitle h2*/
+      .subtitle {
+        font-size: 2rem;
+        font-weight: 400;
+        color: #cbd5e1;
+        margin-bottom: 30px;
+      }
+
+      /*Grid kartu seragam*/
+      .grid-seragam {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 12px;
+        margin: 0 auto 30px auto;
+        width: max-content;
+        max-width: 800px;
+        justify-content: center;
+      }
+
+      /*Desain Kartu Seragam*/
+      .kartu-seragam {
+        border-radius: 15px;
+        padding: 15px 8px;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+
+        width: 200px;
+        height: 220px;
+        box-sizing: border-box;
+      }
+    
+    
+
+      .kartu-seragam:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      /*Gradasi warna kartu seragam*/
+      .kartu-seragam:nth-child(1) {
+        background: linear-gradient(135deg, #ff9f43, #ff793f);
+        color: #ffffff;
+      }
+      .kartu-seragam:nth-child(2) {
+        background: linear-gradient(135deg, #26de81, #20bf6b);
+        color: #ffffff;
+      }
+      .kartu-seragam:nth-child(3) {
+        background: linear-gradient(135deg, #a8ff78, #78ffd6);
+        color: #1e293b;
+      }
+      .kartu-seragam:nth-child(4) {
+        background: linear-gradient(135deg, #ffb8b8, #ff8787);
+        color: #1e293b;
+      }
+      .kartu-seragam:nth-child(5) {
+        background: linear-gradient(135deg, #0ed2f7, #b2fefa);
+        color: #1e293b;
+      }
+
+      /* Ikon didalam kartu */
+      .kartu-seragam img{
+        width: 85%;
+        height: 250px;
+        object-fit: contain;
+        margin-bottom: 8px;
+      }
+
+      .kartu-seragam tambahan {
+        width: 85%;
+        height: 250px;
+        object-fit: contain;
+        margin-bottom: 8px;
+      }
+
+      /* Tulisan didalam kartu */
+      .kartu-seragam h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+
+      .kartu-seragam p {
+        font-size: 0.75rem;
+        opacity: 0.9;
+        line-height: 1.3;
+      }
+
+      /*Area input dan tombol dibawah kartu */
+      .input-area {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /*Hari & Kotak tanggal*/
+      #pilihan-hari,
+      #angka-tanggal {
+        background-color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 15px;
+        font-size: 1rem;
+        color: #333333;
+        outline: none;
+      }
+
+      #pilihan-hari {
+        min-width: 150px;
+      }
+
+      /* Lebar input tanggal tidak terpotong */
+      #angka-tanggal {
+        width: 180px;
+      }
+
+      /*Label pembiasaan olahraga*/
+      .olahraga-label {
+        font-size: 0.95rem;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+      }
+
+      .olahraga-label input {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+      }
+
+      /*Tombol lihat seragam */
+      .input-area button {
+        background: linear-gradient(135deg, #54a0ff, #2e86de);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 25px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+      }
+
+      .input-area button:hover {
+        opacity: 0.9;
+      }
+
+      /* Kotak putih tempat hasil teks gambar*/
+      .result-card {
+        width: 100%;
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 25px;
+        margin-top: 20px;
+        color: #1e293b;
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+        text-align: center;
+      }
+
+      .result-card h2 {
+        font-size: 2rem;
+        color: #2b3a55;
+        margin: 0 0 20px 0;
+        font-weight: 700;
+      }
+
+      /*KONDISI 1: Gambar kiri, deskripsi kanan*/
+      .konten-bawah {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 25px;
+      }
+
+      .konten-bawah #deskripsi-seragam {
+        text-align: left;
+        flex: 1;
+      }
+
+      #blok-gambar {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+      }
+
+      /*KONDISI 2: Gambar berjejer, deskripsi bawah*/
+      .konten-bawah.layout-kamis {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .konten-bawah.konten-bawah.layout-kamis #deskripsi-seragam {
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .pembungkus-gambar {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /*Gambar seragam hasil*/
+      #gambar-seragam,
+      #gambar-seragam-tambahan {
+        width: auto;
+        max-width: 300px;
+        height: 230px;
+        border-radius: 6px;
+        margin: 0;
+        object-fit: contain;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      #deskripsi-seragam {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        color: #475569;
+        text-align: center;
+        flex: 1;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar start -->
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">Klock<span>SMAN 71</span></a>
+
+      <div class="navbar-nav">
+        <a href="index.html#">Home</a>
+        <a href="index.html#about">About</a>
+        <div class="dropdown">
+          <a href="javascript:void(0);" class="dropbtn"
+            >Profil <i class="fas fa-chevron-down"></i
+          ></a>
+          <div class="dropdown-content">
+            <a href="profil.html"><i class="fas fa-users"></i> Kel. 4</a>
+            <a href="profil.steffy.html"><i class="fas fa-user"></i> Steffy</a>
+            <a href="profil.seina.html"><i class="fas fa-user"></i> Seina</a>
+            <a href="profil.priscilla.html"
+              ><i class="fas fa-user"></i> Priscilla</a
+            >
+            <a href="profil.emily.html"><i class="fas fa-user"></i> Emily</a>
+          </div>
+        </div>
+        <a href="product.html">Product</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="search"><i data-feather="search"></i></a>
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <div class="main-card">
+      <h1>What's Your Uniform?</h1>
+      <h2 class="subtitle">Explore the SMAN 71 Uniform:</h2>
+
+      <div class="grid-seragam">
+        <div class="kartu-seragam" onclick="klikKartu('putihabu')">
+          <img
+            src="seragam/putihabu.png"
+            alt="Ikon Putih Abu"
+            class="gambar-ikon"
+          />
+          <h3>Putih Abu</h3>
+          <p>Senin, Selasa, Kamis</p>
+        </div>
+
+        <div class="kartu-seragam" onclick="klikKartu('pramuka')">
+          <img
+            src="seragam/pramuka.png"
+            alt="Ikon Pramuka"
+            class="gambar-ikon"
+          />
+          <h3>Pramuka</h3>
+          <p>Hari Rabu</p>
+        </div>
+
+        <div class="kartu-seragam" onclick="klikKartu('batik')">
+          <img src="seragam/batik.png" alt="Ikon Batik" class="gambar-ikon" />
+          <h3>Batik 71</h3>
+          <p>Jumat Ganjil</p>
+        </div>
+
+        <div class="kartu-seragam" onclick="klikKartu('sadariah')">
+          <img
+            src="seragam/sadariah.png"
+            alt="Ikon Sadariah"
+            class="gambar-ikon"
+          />
+          <h3>Sadariah</h3>
+          <p>Jumat Genap</p>
+        </div>
+
+        <div class="kartu-seragam" onclick="klikKartu('olahraga')">
+          <img
+            src="seragam/olahraga.png"
+            alt="Ikon Olahraga"
+            class="gambar-ikon"
+          />
+          <h3>Olahraga</h3>
+          <p>Pembiasaan Olahraga (Kamis)</p>
+        </div>
+      </div>
+
+      <div class="input-area">
+        <select id="pilihan-hari" onchange="aturFiturInput()">
+          <option value="">--Pilih Hari--</option>
+          <option value="Senin">Senin</option>
+          <option value="Selasa">Selasa</option>
+          <option value="Rabu">Rabu</option>
+          <option value="Kamis">Kamis</option>
+          <option value="Jumat">Jumat</option>
+        </select>
+
+        <input
+          type="number"
+          id="angka-tanggal"
+          min="1"
+          max="31"
+          placeholder="Tanggal (1-31)"
+          style="display: none; width: 105px"
+        />
+
+        <label
+          class="olahraga-label"
+          id="wrapper-olahraga"
+          style="display: none"
+        >
+          <input type="checkbox" id="cek-olahraga" />Ada Pembiasaan Olahraga?
+        </label>
+
+        <button onclick="cekSeragamSmart()">Lihat Seragam</button>
+
+        <div id="kotak-hasil" class="result-card" style="display: none">
+          <h2 id="judul-hari">Hari</h2>
+
+        <div id="layout-konten" class="konten-bawah">
+
+          <div id="blok-gambar">
+            <img id="gambar-seragam" src="" alt="Seragam">
+            <img id="gambar-seragam-tambahan" src="" alt="Seragam Tambahan" style="display: none;" />
+          </div>
+
+          <p id="deskripsi-seragam">Deskripsi seragam akan muncul di sini.</p>
+         </div>
+       </div>
+
+    <!-- JavaScript untuk mengatur input tanggal berdasarkan pilihan hari -->
+    <script>
+      function aturFiturInput() {
+        const hari = document.getElementById("pilihan-hari").value;
+        const inputTanggal = document.getElementById("angka-tanggal");
+        const cekOlahraga = document.getElementById("cek-olahraga");
+        const wrapperOlahraga = document.getElementById("wrapper-olahraga");
+
+        //Khusus hari jumat
+        if (hari === "Jumat") {
+          inputTanggal.style.display = "inline-block"; //Munculkan input tanggal jika pilih hari jumat
+        } else {
+          inputTanggal.style.display = "none"; //sembunyikan jika selain hari jumat
+          inputTanggal.value = "";
+        }
+
+        //Khusus hari Kamis
+        if (hari === "Kamis") {
+          wrapperOlahraga.style.display = "inline-block"; //Munculkan pilihan olahraga jika pilih hari kamis
+        } else {
+          wrapperOlahraga.style.display = "none"; //Sembunyikan jika selain hari Kamis
+          cekOlahraga.checked = false;
+        }
+      }
+
+      //Mengatur kartu kotak bisa diklik
+      function klikKartu(jenisSeragam) {
+        const kotakHasil = document.getElementById("kotak-hasil");
+        const judulHari = document.getElementById("judul-hari");
+        const imgSeragam = document.getElementById("gambar-seragam");
+        const imgTambahan = document.getElementById("gambar-seragam-tambahan");
+        const deskripsi = document.getElementById("deskripsi-seragam");
+
+        //Ambil elemen input untuk otomatis saat kartu diklik
+        const pilihanHari = document.getElementById("pilihan-hari");
+        const inputTanggal = document.getElementById("angka-tanggal");
+        const cekOlahraga = document.getElementById("cek-olahraga");
+
+        imgTambahan.style.display = "none";
+        imgTambahan.src = "";
+
+        if (jenisSeragam === "putihabu") {
+          judulHari.innerText = "Seragam Putih Abu";
+          imgSeragam.src = "seragam/putihabu.png";
+          deskripsi.innerText =
+            "Seragam Putih Abu digunakan pada hari Senin, Selasa, dan Kamis. Wajib menggunakan atribut dasi beserta ikat pinggang, serta kous kaki berwarna putih. Untuk hari Senin wajib membawa topi saat upacara.";
+          pilihanHari.value = "Senin";
+          aturFiturInput();
+        } else if (jenisSeragam === "pramuka") {
+          judulHari.innerText = "Seragam Pramuka";
+          imgSeragam.src = "seragam/pramuka.png";
+          deskripsi.innerText =
+            "Seragam Pramuka digunakan pada hari Rabu. Wajib menggunakan atribut lengkap dengan kacu, ikat pinggang, dan kaos kaki berwarna hitam.";
+          pilihanHari.value = "Rabu";
+          aturFiturInput();
+        } else if (jenisSeragam === "batik") {
+          judulHari.innerText = "Seragam Batik 71";
+          imgSeragam.src = "seragam/batik.png";
+          deskripsi.innerText =
+            "Seragam Batik 71 digunakan pada hari Jumat dengan tanggal ganjil. Wajib menggunakan bawahan rok/celana putih.";
+          pilihanHari.value = "Jumat";
+          aturFiturInput();
+          inputTanggal.value = 1; //Defaul ke tanggal Ganjil
+        } else if (jenisSeragam === "sadariah") {
+          judulHari.innerText = "Seragam Sadariah";
+          imgSeragam.src = "seragam/sadariah.png";
+          deskripsi.innerText =
+            "Seragam Sadariah digunakan pada hari Jumat dengan tanggal genap. Wajib menggunakan bawahan rok/celana abu-abu.";
+          pilihanHari.value = "Jumat";
+          aturFiturInput();
+          inputTanggal.value = 2; // Default ke tanggal genap
+        } else if (jenisSeragam === "olahraga") {
+          judulHari.innerText = "Seragam Olahraga";
+          imgSeragam.src = "seragam/olahraga.png";
+          deskripsi.innerText =
+            "Digunakan dari rumah pada hari Kamis jika ada jadwal pembiasaan olahraga. Dan dipakai pada saat pembelajaran olahraga.";
+          pilihanHari.value = "Kamis";
+          aturFiturInput();
+          cekOlahraga.checked = true; //default ke ada pembiasaan olahraga
+        }
+
+        kotakHasil.style.display = "block";
+      }
+
+      //Fungsi untuk mendeteksi hari dan tanggal ganjil/genap
+      function cekSeragamSmart() {
+        const hari = document.getElementById("pilihan-hari").value;
+        const tanggal = document.getElementById("angka-tanggal").value;
+        const isOlahraga = document.getElementById("cek-olahraga").checked;
+
+        const kotakHasil = document.getElementById("kotak-hasil");
+        const judulHari = document.getElementById("judul-hari");
+        const imgSeragam = document.getElementById("gambar-seragam");
+        const imgTambahan = document.getElementById("gambar-seragam-tambahan");
+        const deskripsi = document.getElementById("deskripsi-seragam");
+        const layoutKonten = document.getElementById("layout-konten");
+
+        if (hari === "Kamis") {
+          //Kalau hari kamis, tambah class layout-kamis (gambar atas, teks bawah)
+          layoutKonten.classList.add("layout-kamis");
+          } else{
+            //kalau hari lain, kembali kesetelan normal)
+            layoutKonten.classList.remove("layout-kamis");
+          }
+
+        //Validasi input wajib diisi
+        if (hari === "") {
+          alert("Silahkan pilih harinya dulu ya!");
+          return;
+        }
+
+        if (
+          hari === "Jumat" &&
+          (tanggal === "" || tanggal < 1 || tanggal > 31)
+        ) {
+          alert(
+            "Khusus hari Jumat, silahkan masukkan tanggal yang sesuai ya! (1-31)!",
+          );
+          return;
+        }
+
+        imgTambahan.style.display = "none";
+        imgTambahan.src = "";
+
+        //Aturan penentuan gambar dan teks seragam
+        if (hari === "Senin" || hari === "Selasa") {
+          judulHari.innerText = "Hari " + hari;
+          imgSeragam.src = "img/putihabu.jpg";
+          deskripsi.innerText =
+            "Gunakan seragam Putih Abu lengkap sesuai gambar!";
+        } else if (hari === "Rabu") {
+          judulHari.innerText = "Hari Rabu";
+          imgSeragam.src = "img/pramuka.jpg";
+          deskripsi.innerText =
+            "Gunakan seragam Pramuka lengkap beserta atributnya!";
+        } else if (hari === "Kamis") {
+          if (isOlahraga) {
+            judulHari.innerText = "Hari Kamis (Pembiasaan Olahraga)";
+            imgSeragam.src = "img/olahraga.png";
+            imgTambahan.src = "img/putihabu.jpg";
+            imgTambahan.style.display = "inline";
+            deskripsi.innerText =
+              "Wajib memakai baju olahraga SMAN 71 dari rumah untuk pembiasaan. NOTES: Membawa seragam ganti Putih Abu-abu lengkap.";
+          } else {
+            judulHari.innerText = "Hari Kamis";
+            imgSeragam.src = "img/putihabu.jpg";
+            deskripsi.innerText = "Gunakan seragam Putih Abu lengkap!";
+          }
+        } else if (hari === "Jumat") {
+          if (tanggal % 2 === 0) {
+            judulHari.innerText =
+              "Hari Jumat (Tanggal " + tanggal + " - Genap)";
+            imgSeragam.src = "img/sadariah.jpg";
+            deskripsi.innerText =
+              "Gunakan seragam Sadariah dengan bawahan rok/celana abu-abu!";
+          } else {
+            judulHari.innerText =
+              "Hari Jumat (Tanggal " + tanggal + " - Ganjil)";
+            imgSeragam.src = "img/batik.jpg";
+            deskripsi.innerText =
+              "Gunakan seragam Batik dengan bawahan rok/celana putih!";
+          }
+        }
+
+        //Memunculkan kotak hasil setelah data diisi
+        kotakHasil.style.display = "block";
+      }
+    </script>
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- My JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
