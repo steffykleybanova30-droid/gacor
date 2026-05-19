@@ -16,7 +16,7 @@ html {
   text-decoration: none;
 }
 
-body {
+body{
   font-family: "Black Ops One", sans-serif;
   background-color: var(--bg);
   color: #fff;
@@ -507,3 +507,5 @@ body {
   height: 100%;
   border: none;
 }
+
+ini css nya
