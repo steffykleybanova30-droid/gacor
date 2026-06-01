@@ -102,8 +102,8 @@
         background-color: rgba(43, 58, 85, 0.95);
         border-radius: 20px;
         width: 100%;
-        max-width: 900px;
-        padding: 40px;
+        max-width: 760px;
+        padding: 25px;
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
         text-align: center;
         color: #fff;
@@ -115,7 +115,7 @@
 
       /*Judul Utama*/
       .main-card h1 {
-        font-size: 3.3rem;
+        font-size: 2.8rem;
         font-weight: 900;
         margin-bottom: 2px;
         letter-spacing: 0.5px;
@@ -123,10 +123,10 @@
 
       /*Subtitle h2*/
       .subtitle {
-        font-size: 2rem;
+        font-size: 1.6rem;
         font-weight: 400;
         color: #cbd5e1;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
       }
 
       /*Grid kartu seragam*/
@@ -136,7 +136,7 @@
         gap: 12px;
         margin: 0 auto 30px auto;
         width: 100%;
-        max-width: 800px;
+        max-width: 700px;
         justify-content: center;
         perspective: 1000px;
       }
@@ -153,8 +153,8 @@
   justify-content: space-between;
   text-align: center;
 
-  width: 200px;
-  height: 250px;
+  width: 170px;
+  height: 230px;
   box-sizing: border-box;
 
   /* EFEK DIMENSI */
@@ -228,23 +228,17 @@
       /* Ikon didalam kartu */
       .kartu-seragam img{
         width: 100%;
-        height: 140px;
+        height: 130px;
         object-fit: contain;
         margin-bottom: 8px;
-      }
-
-      /* ---- Kartu Nomor 5 (Olahraga) ---- */
-      .kartu-seragam:nth-child(5) {
-      background: linear-gradient(135deg, #0ed2f7, #b2fefa);
+        margin-top: 1px;
       }
       
-      .kartu-seragam:nth-child(5) img,
-      .kartu-seragam:last-child img {
-       transform: scale(1.25);
-       height: 200px;
-       margin-top: 20px;
-       margin-bottom: 18px;
-      }
+.kartu-seragam:nth-child(5) img,
+.kartu-seragam:last-child img {
+  height: 120px;
+  margin-top: 3px;
+}
 
       /* Bentuk teks kartu 5 */
       .kartu-seragam:nth-child(5) h3 {
@@ -256,17 +250,17 @@
       font-weight: 600;
       }
 
-      /* Tulisan didalam kartu */
+      /* Tulisan didalam grid kartu */
       .kartu-seragam h3 {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         font-weight: 600;
         margin-bottom: 6px;
         color: #1e293b;
       }
 
       .kartu-seragam p {
-        font-size: 1rem;
-        opacity: 1;
+        font-size: 1.1rem;
+        opacity: 3;
         line-height: 1.3;
         color: #475569;
       }
@@ -479,48 +473,55 @@
 
 /* --- ANIMASI MELAYANG (FLOATING EFFECT) --- */
 @keyframes melayang {
-  0% {
-    transform: translateY(0px);
+  0%, 100% {
+    transform: translateY(0);
   }
+
   50% {
-    transform: translateY(-10px); /* Kotak naik ke atas sedikit */
-  }
-  100% {
-    transform: translateY(0px);
+    transform: translateY(-5px);
   }
 }
 
 /* --- MENERAPKAN ANIMASI KE KARTU SERAGAM --- */
-.kartu-seragam {
-  /* Memicu animasi muncul tiba-tiba saat halaman di-load */
-  animation: munculTibaTiba 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-  opacity: 0;
+
+.kartu-seragam:nth-child(1) {
+  animation:
+    munculTibaTiba .8s .1s forwards,
+    melayang 3.5s ease-in-out infinite;
 }
 
-/* Memberikan efek delay (antrean) agar munculnya bergantian satu per satu */
-.kartu-seragam:nth-child(1) { animation-delay: 0.1s; }
-.kartu-seragam:nth-child(2) { animation-delay: 0.2s; }
-.kartu-seragam:nth-child(3) { animation-delay: 0.3s; }
-.kartu-seragam:nth-child(4) { animation-delay: 0.4s; }
-.kartu-seragam:nth-child(5) { animation-delay: 0.5s; }
+.kartu-seragam:nth-child(2) {
+  animation:
+    munculTibaTiba .8s .2s forwards,
+    melayang 3.5s .3s ease-in-out infinite;
+}
 
-/* --- EFEK MELAYANG AKTIF BERGANTIAN SETELAH MUNCUL --- */
-/* Kita buat efek melayang ini berjalan terus menerus (infinite) setelah animasi muncul selesai */
-.kartu-seragam:nth-child(1) { animation: munculTibaTiba 0.8s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, melayang 4s ease-in-out 0.9s infinite; }
-.kartu-seragam:nth-child(2) { animation: munculTibaTiba 0.8s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, melayang 4.2s ease-in-out 1s infinite; }
-.kartu-seragam:nth-child(3) { animation: munculTibaTiba 0.8s 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, melayang 4.4s ease-in-out 1.1s infinite; }
-.kartu-seragam:nth-child(4) { animation: munculTibaTiba 0.8s 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, melayang 4.1s ease-in-out 1.2s infinite; }
-.kartu-seragam:nth-child(5) { animation: munculTibaTiba 0.8s 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, melayang 4.3s ease-in-out 1.3s infinite; }
+.kartu-seragam:nth-child(3) {
+  animation:
+    munculTibaTiba .8s .3s forwards,
+    melayang 3.5s .6s ease-in-out infinite;
+}
+
+.kartu-seragam:nth-child(4) {
+  animation:
+    munculTibaTiba .8s .4s forwards,
+    melayang 3.5s .9s ease-in-out infinite;
+}
+
+.kartu-seragam:nth-child(5) {
+  animation:
+    munculTibaTiba .8s .5s forwards,
+    melayang 3.5s 1.2s ease-in-out infinite;
+}
 
 /* --- MODIFIKASI HOVER (SAAT KURSOR DI ATAS KOTAK) --- */
 /* Agar saat di-hover efek melayangnya berhenti sejenak dan fokus ke efek zoom membesar */
 .kartu-seragam:hover {
-  animation-play-state: paused; /* Menghentikan animasi melayang sementara */
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: scale(1.03);
+  box-shadow:
+    0 0 40px rgba(216,255,250,.7),
+    0 8px 20px rgba(185,251,255,.7);
 }
-
 .dropdown-content {
   display: none;
   position: absolute;
@@ -819,7 +820,7 @@
         <h3>Klock Challenge 🧠</h3>
         <p>Uji daya ingatmu dengan mencocokkan gambar seragam SMAN 71!<br>
         Temukan semua pasangan kartu dalam waktu secepat mungkin.<br>
-        <strong>Ayo Uji Fokusmu !</strong></p>
+        <strong>Yuk Uji Fokusmu !</strong></p>
     </div>
 
     <div class="header">
@@ -925,39 +926,30 @@
           imgSeragam.src = "seragam/putihabu.png";
           deskripsi.innerHTML =
             "Putih Abu 😵‍💫🤍<br> <br> Dipakai paling sering, tiap (Senin, Selasa, dan Kamis) bareng rok atau celana abu andalan.<br> Kelihatannya simple, tapi tetep paling cocok buat vibes sekolah 😆";
-          pilihanHari.value = "Senin";
-          aturFiturInput();
         } else if (jenisSeragam === "pramuka") {
           judulHari.innerText = "Seragam Pramuka";
           imgSeragam.src = "seragam/pramuka.png";
           deskripsi.innerHTML =
             "Hari Rabu = pramuka dayy 🤎🔥<br> <br> Pastikan atribut lengkap seperti: <br> dasi, ikat pinggang, dan kaos kaki hitam dipakai yaa. <br> Jangan lupa tampil rapi dan semangat selama kegiatan sekolah!!";
-          pilihanHari.value = "Rabu";
-          aturFiturInput();
+
         } else if (jenisSeragam === "batik") {
           judulHari.innerText = "Seragam Batik 71";
           imgSeragam.src = "seragam/batik.png";
           deskripsi.innerHTML =
             "Batik 71 timee 😆✨<br><br> Dipakai tiap hari (Jumat bertanggal Ganjil) dipadukan rok atau celana putih biar makin khas anak SMAN 71 Jakarta!!";
-          pilihanHari.value = "Jumat";
-          aturFiturInput();
-          inputTanggal.value = 1; //Defaul ke tanggal Ganjil
+
         } else if (jenisSeragam === "sadariah") {
           judulHari.innerText = "Seragam Sadariah";
           imgSeragam.src = "seragam/sadariah.png";
           deskripsi.innerHTML =
             "Sadariahnyaa anak 71 ✨🤍 <br> <br> Dipakai hari Jumat dipadukan rok atau celana abu-abu.<br> Sopan, manis, dan vibes Jumatnya dapet banget 😆";
-          pilihanHari.value = "Jumat";
-          aturFiturInput();
-          inputTanggal.value = 2; // Default ke tanggal genap
+
         } else if (jenisSeragam === "olahraga") {
           judulHari.innerText = "Seragam Olahraga";
           imgSeragam.src = "seragam/olahraga.png";
           deskripsi.innerHTML =
             "Olahraga timee 💥🏃‍♀️<br> <br> Seragam ini dipakai disetiap kegiatan olahraga biar makin nyaman buat gerak ke sana-sini.<br> Santai, nyaman, tapi keliatan khasnya anak 71 🥳";
-          pilihanHari.value = "Kamis";
-          aturFiturInput();
-          cekOlahraga.checked = true; //default ke ada pembiasaan olahraga
+
         }
 
         kotakHasil.style.display = "block";
@@ -981,13 +973,11 @@
         const deskripsi = document.getElementById("deskripsi-seragam");
         const layoutKonten = document.getElementById("layout-konten");
 
-        if (hari === "Kamis") {
-          //Kalau hari kamis, tambah class layout-kamis (gambar atas, teks bawah)
-          layoutKonten.classList.add("layout-kamis");
-          } else{
-            //kalau hari lain, kembali kesetelan normal)
-            layoutKonten.classList.remove("layout-kamis");
-          }
+if (hari === "Kamis" && isOlahraga) {
+  layoutKonten.classList.add("layout-kamis");
+} else {
+  layoutKonten.classList.remove("layout-kamis");
+}
 
         //Validasi input wajib diisi
         if (hari === "") {
