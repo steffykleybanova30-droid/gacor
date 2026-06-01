@@ -1,0 +1,309 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Klock SMAN 71</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Black+Ops+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons -->
+
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- My styles -->
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Navbar start -->
+
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">Klock<span>SMAN 71</span></a>
+
+      <div class="navbar-nav">
+        <a href="index.html#">Home</a>
+
+        <a href="index.html#about">About</a>
+
+        <div class="dropdown">
+          <a href="javascript:void(0);" class="dropbtn"
+            >Profil <i class="fas fa-chevron-down"></i
+          ></a>
+
+          <div class="dropdown-content">
+            <a href="profil.html"><i class="fas fa-users"></i> Kel. 4</a>
+
+            <a href="profil.steffy.html"><i class="fas fa-user"></i> Steffy</a>
+
+            <a href="profil.seina.html"><i class="fas fa-user"></i> Seina</a>
+
+            <a href="profil.priscilla.html"
+              ><i class="fas fa-user"></i> Priscilla</a
+            >
+
+            <a href="profil.emily.html"><i class="fas fa-user"></i> Emily</a>
+          </div>
+        </div>
+
+        <a href="product.html">Product</a>
+
+        <a href="index.html#contact">Contact</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="search"><i data-feather="search"></i></a>
+
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+    </nav>
+
+    <!-- Navbar end -->
+
+    <!-- Hero Section start -->
+
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-inner">
+        <div class="hero-content-left">
+          <h1>WELCOME TO <br /><span>KLOCK SMAN 71</span></h1>
+          <p>
+            Pastikan seragam sesuai dengan ketentuan yang berlaku! Mulai dari
+            kelengkapan atribut hingga kesesuaian jadwal mingguan.
+          </p>
+<a href="#about" class="cta-hero-btn">#Keep.Life.Organized.Clocked</a>
+        </div>
+
+        <div class="hero-content-right">
+          <img src="img/klock.png" alt="Logo Klock" class="floating-logo" />
+        </div>
+      </div>
+    </section>
+
+    <section class="floating-features">
+      <div id="about" class="scroll-target"></div>
+      <div class="cards-container" id="about">
+        <!-- Kotak 1: Masalah Siswa -->
+        <div class="info-card">
+          <div class="icon-box"><i class="fa-solid fa-lightbulb"></i></div>
+          <h3>Solusi Kebingungan</h3>
+          <p>
+            Klock SMAN 71 hadir mengatasi masalah jadwal seragam yang sering
+            tidak jelas, berubah, atau terlambat diinformasikan.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon-box"><i class="fa-solid fa-shirt"></i></div>
+          <h3>Panduan Visual</h3>
+          <p>
+            Platform ini memudahkan memahami ketentuan berpakaian secara akurat
+            dengan ditambahkan visual yang mudah untuk dipahami.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon-box"><i class="fa-solid fa-user-shield"></i></div>
+          <h3>Minim Pelanggaran</h3>
+          <p>
+            Membantu meminimalisir pelanggaran tata tertib disekolah SMAN 71
+            Jakarta yang diakibatkan oleh kesalahan seragam.
+          </p>
+        </div>
+
+        <!-- Kotak 4: Kotak Aksi / Tombol Utama (Warna Oranye/Merah) -->
+        <div class="cta-card">
+          <div>
+            <h2>Cek Jadwal</h2>
+            <p>
+              Sudah siap melihat jadwal seragam sekolahmu? Yuk, langsung mulai!
+            </p>
+          </div>
+          <a href="product.html" class="btn-white-action">
+            Lihat Jadwal Seragam <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Section end -->
+
+    <!-- About Section start -->
+
+    <section class="about-member">
+      <h4>Our <span>Member</span></h4>
+      <p>
+        Tim Klock SMAN 71 terdiri dari beberapa anggota yang memiliki tugas
+        masing-masing dalam pembuatan platform ini. <br />
+        CHECK OUR PROFIL:
+      </p>
+
+      <div class="member-cards-row">
+        <div class="member-card">
+          <img src="member/emily2.jpeg" class="member-card-img" alt="Emily" />
+          <h3 class="member-card-title">
+            <a href="profil.emily.html">~ Emily Mikaela ~</a>
+          </h3>
+          <p class="member-card-desc">Content Writer</p>
+        </div>
+
+        <div class="member-card">
+          <img src="member/steffy2.jpeg" class="member-card-img" alt="Anya" />
+          <h3 class="member-card-title">
+            <a href="profil.steffy.html">~ Steffy Gwayneth ~</a>
+          </h3>
+          <p class="member-card-desc">Web Developer</p>
+        </div>
+
+        <div class="member-card">
+          <img src="member/seina2.jpeg" class="member-card-img" alt="Budi" />
+          <h3 class="member-card-title">
+            <a href="profil.seina.html">~ Seina Ernes ~</a>
+          </h3>
+          <p class="member-card-desc">Graphic Design</p>
+        </div>
+
+        <div class="member-card">
+          <img src="member/cila2.jpeg" class="member-card-img" alt="Citra" />
+          <h3 class="member-card-title">
+            <a href="profil.priscilla.html">~ Priscilla Mutiara ~</a>
+          </h3>
+          <p class="member-card-desc">Programmer</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section end -->
+
+    <!-- Feather Icons -->
+
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- Contact bawah -->
+
+    <footer id="contact" class="bg-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 footer-left">
+            <div class="logo-wrapper">
+              <img src="img/logo.png" alt="Logo Sekolah" class="footer-logo" />
+
+              <h5>SMA NEGERI 71 JAKARTA</h5>
+            </div>
+
+            <p>
+              Website Klock ini dibuat oleh murid SMAN 71 Jakarta, kami terpikir
+              membuat website ini karena adanya Tugas Informatika dengan membuat
+              website. Maka dari itu kami memilih membuat website klock dengan
+              tujuan menginformasikan Siswa/i agar mereka dapat menggunakan
+              seragam sesuai dengan jadwal dan ketentuan.
+            </p>
+
+            <div class="social-media">
+          <a
+            href="https://instagram.com/sman71jakarta"
+            target="_blank"
+            class="social-icon ig"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@sman71jakarta32
+"
+            target="_blank"
+            class="social-icon yt"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=smatujuhsatu@gmail.com"
+            target="_blank"
+            class="social-icon mail"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+
+          <div class="col-md-6 footer-right">
+            <h5>Kontak</h5>
+
+            <p>
+              Jl. H. Dogol, Kavling TNI Angkatan Laut, RT 7/RW 16, Kelurahan
+              Duren Sawit, Kecamatan Duren Sawit, Jakarta Timur, 13440.
+            </p>
+
+<ul class="contact-list">
+  <li><i class="fas fa-phone"></i> Telp/Fax : (021) 8614112</li>
+  <li><i class="fas fa-envelope"></i> Email : smatujuhsatu@gmail.com</li>
+</ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+<!-- Audio -->
+<audio id="bg-music" loop preload="auto">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SCRIPT PENTING: Letakkan di paling bawah sebelum </body> -->
+<script>
+  const audio = document.getElementById("bg-music");
+
+  // Fungsi untuk memutar musik dari posisi terakhir
+  function playAudio() {
+    const savedPosition = localStorage.getItem("audioPosition");
+    if (savedPosition) {
+      audio.currentTime = parseFloat(savedPosition);
+    }
+    audio.play().catch(e => console.log("Menunggu interaksi user..."));
+  }
+
+  // 1. Simpan posisi saat halaman akan pindah
+  window.addEventListener("beforeunload", () => {
+    localStorage.setItem("audioPosition", audio.currentTime);
+  });
+
+  // 2. Play musik saat halaman dimuat
+  window.addEventListener("load", () => {
+    playAudio();
+  });
+
+  // 3. Tambahan: Play saat user pertama kali klik di mana saja (Penting untuk Autoplay Policy)
+  document.body.addEventListener('click', () => {
+    if (audio.paused) {
+      playAudio();
+    }
+  }, { once: true });
+</script>
+
+    <!-- My JavaScript -->
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
