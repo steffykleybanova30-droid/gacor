@@ -1,0 +1,1328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Klock SMAN 71</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Black+Ops+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- My styles -->
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /*background utama website*/
+      body { 
+        background-color: var(--bg); 
+        display: block; 
+        margin: 0; 
+        padding: 0; 
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        position: relative; 
+        z-index: 1; 
+        background: linear-gradient(
+        to bottom,
+        rgba(10, 8, 54, 0) 50%,
+        rgba(10, 8, 54, 0.5) 80%,
+        rgba(10, 8, 54, 1) 100%
+        );} 
+      
+        .hero-product { 
+          position: relative;
+          width: 100%;
+          height: 100vh;
+          overflow: hidden;
+        } 
+
+        .video-bg {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         z-index: -1;
+        }
+
+        .hero-product .video-bg { 
+         position: absolute; 
+         top: 50%;                  /* Posisikan titik awal di tengah vertikal */
+         left: 50%;                 /* Posisikan titik awal di tengah horizontal */
+         transform: translate(-50%, -50%); /* Geser mundur setengah ukuran video agar pas di tengah */
+         width: 100%; 
+         height: 100%;
+         object-fit: cover;         
+         z-index: 1;
+        }
+
+        .video-bg {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0,0,0,1) 75%,
+    rgba(0,0,0,0) 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0,0,0,1) 75%,
+    rgba(0,0,0,0) 100%
+  );
+}
+
+        .hero-product::after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+           z-index: 0;
+          }
+
+          
+      
+      /*Wadah Utama Aplikasi*/
+      .main-card {
+        background-color: rgba(43, 58, 85, 0.95);
+        border-radius: 20px;
+        width: 100%;
+        max-width: 760px;
+        padding: 25px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        color: #fff;
+        margin: 80px auto 40px auto;
+        position: relative;
+        z-index: 10;
+        margin-top: 10vh;
+      }
+
+      /*Judul Utama*/
+      .main-card h1 {
+        font-size: 2.8rem;
+        font-weight: 900;
+        margin-bottom: 2px;
+        letter-spacing: 0.5px;
+      }
+
+      /*Subtitle h2*/
+      .subtitle {
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: #cbd5e1;
+        margin-bottom: 20px;
+      }
+
+      /*Grid kartu seragam*/
+      .grid-seragam {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 0 auto 30px auto;
+        width: 100%;
+        max-width: 700px;
+        justify-content: center;
+        perspective: 1000px;
+      }
+
+      /*Desain Kartu Seragam*/
+      .kartu-seragam {
+  border-radius: 20px;
+  padding: 20px 15px;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+
+  width: 170px;
+  height: 230px;
+  box-sizing: border-box;
+
+  /* EFEK DIMENSI */
+  border: 1px solid rgba(255,255,255,0.25);
+
+  box-shadow:
+    0 12px 25px rgba(0,0,0,0.25),
+    inset 0 1px 1px rgba(255,255,255,0.4);
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.kartu-seragam:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.kartu-seragam:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.kartu-seragam:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.kartu-seragam:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
+.kartu-seragam:nth-child(5) {
+  animation-delay: 0.9s;
+}
+    
+      .kartu-seragam:hover {
+        transform: translateY(-10px) rotateX(1deg)rotateY(-1deg)scale(1.05);
+        box-shadow:
+  0 0 60px rgba(216, 255, 250, 0.9),
+  0 10px 25px rgba(185, 251, 255, 0.9);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      /*Gradasi warna kartu seragam*/
+      .kartu-seragam:nth-child(1) {
+        background: linear-gradient(135deg, #ebc400, #ffe991);
+        color: #ffffff;
+        box-shadow: 0 0 30px rgba(255, 121, 63, 0.8);
+      }
+      .kartu-seragam:nth-child(2) {
+        background: linear-gradient(135deg, #60c291, #20bf6b);
+        color: #ffffff;
+        box-shadow: 0 0 30px rgba(32, 191, 107, 0.8);
+      }
+      .kartu-seragam:nth-child(3) {
+        background: linear-gradient(135deg, #a8ff78, #78ffd6);
+        color: #1e293b;
+        box-shadow: 0 0 30px rgba(120, 255, 214, 0.8);
+      }
+      .kartu-seragam:nth-child(4) {
+        background: linear-gradient(135deg, #edb3b3, #fe6a6a);
+        color: #1e293b;
+        box-shadow: 0 0 30px rgba(255, 135, 135, 0.8);
+      }
+      .kartu-seragam:nth-child(5) {
+        background: linear-gradient(135deg, #0ed2f7, #b2fefa);
+        color: #1e293b;
+        box-shadow: 0 0 30px rgba(14, 210, 247, 0.8);
+      }
+
+      /* Ikon didalam kartu */
+      .kartu-seragam img{
+        width: 100%;
+        height: 130px;
+        object-fit: contain;
+        margin-bottom: 8px;
+        margin-top: 1px;
+      }
+      
+.kartu-seragam:nth-child(5) img,
+.kartu-seragam:last-child img {
+  height: 120px;
+  margin-top: 3px;
+}
+
+      /* Bentuk teks kartu 5 */
+      .kartu-seragam:nth-child(5) h3 {
+      color: #0f172a;
+      }
+
+      .kartu-seragam:nth-child(5) p {
+      color: #334155;
+      font-weight: 600;
+      }
+
+      /* Tulisan didalam grid kartu */
+      .kartu-seragam h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: #1e293b;
+      }
+
+      .kartu-seragam p {
+        font-size: 1.1rem;
+        opacity: 3;
+        line-height: 1.3;
+        color: #475569;
+      }
+
+      /*Area input dan tombol dibawah kartu */
+      .input-area {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /*Hari & Kotak tanggal*/
+      #pilihan-hari,
+      #angka-tanggal {
+        background-color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 15px;
+        font-size: 1.3rem;
+        color: #333333;
+        outline: none;
+      }
+
+      #pilihan-hari {
+        min-width: 150px;
+      }
+
+      /*Label pembiasaan olahraga*/
+      .olahraga-label {
+        font-size: 0.95rem;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+      }
+
+      .olahraga-label input {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+      }
+
+      /*Tombol lihat seragam */
+      .input-area button {
+        background: linear-gradient(135deg, #54a0ff, #2e86de);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 30px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+      }
+
+      .input-area button:hover {
+        opacity: 0.9;
+      }
+
+      /* Kotak putih tempat hasil teks gambar*/
+      .result-card {
+        width: 100%;
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 25px;
+        margin-top: 20px;
+        color: #1e293b;
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+        text-align: center;
+      }
+
+      .result-card h2 {
+        font-size: 2rem;
+        color: #2b3a55;
+        margin: 0 0 20px 0;
+        font-weight: 700;
+      }
+
+ /*KONDISI 1: Gambar kiri, deskripsi kanan (Default Desktop)*/
+.konten-bawah {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.konten-bawah #deskripsi-seragam {
+  text-align: left; /* Teks otomatis rata kiri saat di samping gambar */
+  flex: 1;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+}
+
+#blok-gambar {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: center;
+  flex-shrink: 0; /* Mencegah gambar gepeng/menyusut */
+}
+
+/*Gambar seragam hasil*/
+#gambar-seragam,
+#gambar-seragam-tambahan {
+  width: auto;
+  max-width: 260px; /* Ukuran pas bersanding dengan teks */
+  height: 250px;
+  border-radius: 12px;
+  margin: 0;
+  object-fit: contain;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/*KONDISI 2: Khusus hari Kamis (Gambar berjejer, deskripsi bawah)*/
+.konten-bawah.layout-kamis {
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.konten-bawah.layout-kamis #deskripsi-seragam {
+  text-align: center;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.pembungkus-gambar {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* --- MEDIA QUERIES (TAMPILAN RESPONSIVE LAYAR) --- */
+
+/* Tampilan untuk Tablet & HP (Maks 768px) */
+@media (max-width: 768px) {
+  .main-card {
+    padding: 20px;
+    margin: 60px auto 20px auto;
+  }
+  .main-card h1 {
+    font-size: 2.5rem; 
+  }
+  .subtitle {
+    font-size: 1.5rem;
+  }
+  .kartu-seragam {
+    width: 45%; 
+    height: 260px;
+  }
+
+  /* Saat di layar tablet/HP, otomatis susun kembali ke atas-bawah agar tidak sempit */
+  .konten-bawah {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .konten-bawah #deskripsi-seragam {
+    text-align: center;
+    width: 100%;
+  }
+  #gambar-seragam,
+  #gambar-seragam-tambahan {
+    max-width: 200px;
+    height: 200px;
+  }
+  #blok-gambar {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+/* Tampilan untuk HP Kecil (Maks 450px) */
+@media (max-width: 450px) {
+  .grid-seragam {
+    gap: 10px;
+  }
+  .kartu-seragam {
+    width: 100%;
+    height: 240px;
+  }
+  .kartu-seragam img {
+    height: 110px;
+  }
+}
+
+      /* --- ANIMASI MASUK (FADE IN & POP UP) --- */
+@keyframes munculTibaTiba {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* --- ANIMASI MELAYANG (FLOATING EFFECT) --- */
+@keyframes melayang {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* --- MENERAPKAN ANIMASI KE KARTU SERAGAM --- */
+
+.kartu-seragam:nth-child(1) {
+  animation:
+    munculTibaTiba .8s .1s forwards,
+    melayang 3.5s ease-in-out infinite;
+}
+
+.kartu-seragam:nth-child(2) {
+  animation:
+    munculTibaTiba .8s .2s forwards,
+    melayang 3.5s .3s ease-in-out infinite;
+}
+
+.kartu-seragam:nth-child(3) {
+  animation:
+    munculTibaTiba .8s .3s forwards,
+    melayang 3.5s .6s ease-in-out infinite;
+}
+
+.kartu-seragam:nth-child(4) {
+  animation:
+    munculTibaTiba .8s .4s forwards,
+    melayang 3.5s .9s ease-in-out infinite;
+}
+
+.kartu-seragam:nth-child(5) {
+  animation:
+    munculTibaTiba .8s .5s forwards,
+    melayang 3.5s 1.2s ease-in-out infinite;
+}
+
+/* --- MODIFIKASI HOVER (SAAT KURSOR DI ATAS KOTAK) --- */
+/* Agar saat di-hover efek melayangnya berhenti sejenak dan fokus ke efek zoom membesar */
+.kartu-seragam:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0 0 40px rgba(216,255,250,.7),
+    0 8px 20px rgba(185,251,255,.7);
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+
+/* --- GAME STYLE --- */
+
+/* --- UTAMA --- */
+.memory-wrapper {
+  position: relative; /* Kunci agar modal bisa menutupi wrapper */
+  width: 100%;
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* --- GAME INTRO --- */
+.game-intro { text-align: center; margin-bottom: 30px; color: #e2e8f0; }
+.game-intro h3 {
+  font-family: "Black Ops One", sans-serif;
+  font-size: 2.8rem;
+  color: #7dd3fc;
+  text-shadow: 0 2px 10px rgba(125, 211, 252, 0.3);
+}
+
+.game-intro p {
+  font-family: "Black Ops One", sans-serif;
+  font-size: 1.3rem;
+  color: #fff
+}
+
+
+/* --- HEADER & STATS --- */
+.header {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+.header h4 { color: #76a8ff; font-size: 3.5rem; margin-bottom: 20px; }
+.stats { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+.stat {
+  background: #5176ff;
+  color: #fff;
+  border-radius: 15px;
+  padding: 10px 25px;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+.stat-label { font-size: 0.9em; }
+.stat-value { font-size: 1.8em; font-weight: bold; }
+
+/* --- GAME BOARD --- */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.card {
+  aspect-ratio: 1;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover { transform: scale(1.03); }
+.card.flipped { transform: rotateY(180deg); }
+.card.matched {
+    pointer-events: none; /* Kartu tidak bisa diklik lagi */
+    transform: rotateY(180deg); /* Memaksa kartu tetap terbuka */
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  border: 4px solid #38bdf8;
+}
+.card-front { background: #f1f5f9; color: #38bdf8; font-size: 3em; box-shadow: 0 6px 0 #0284c7; }
+.card-back { background: #0f172a; transform: rotateY(180deg); overflow: hidden; box-shadow: 0 6px 0 #0284c7; }
+.card-back img { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- MODAL (OVERLAY) --- */
+.modal {
+  display: none;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+.modal.show { display: flex; }
+.modal-content {
+  background: #0f172a;
+  padding: 40px;
+  border-radius: 30px;
+  text-align: center;
+  border: 4px solid #38bdf8;
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
+}
+.modal-content h2 { color: #38bdf8; margin-bottom: 20px; font-size: 2.5em; }
+.modal-content p { color: #e2e8f0; margin-bottom: 25px; font-size: 1.3em; }
+
+/* --- TOMBOL --- */
+.btn {
+  background: #38bdf8;
+  color: white;
+  border: 4px solid white;
+  padding: 15px 35px;
+  border-radius: 20px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #0284c7;
+  transition: 0.2s;
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #0284c7; }
+
+/* --- RESPONSIVITAS --- */
+@media (max-width: 768px) {
+  .game-board { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 500px) {
+  .game-board { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .memory-wrapper { padding: 20px; margin: 20px auto; }
+}
+
+
+    </style>
+  </head>
+  <body>
+    <!-- Navbar start -->
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">Klock<span>SMAN 71</span></a>
+
+      <div class="navbar-nav">
+        <a href="index.html#">Home</a>
+        <a href="index.html#about">About</a>
+
+        <!-- Profil -->
+        <div class="dropdown">
+          <a href="javascript:void(0);" class="dropbtn" id="profilBtn">
+            Profil <i class="fas fa-chevron-down"></i>
+          </a>
+          <div class="dropdown-content">
+            <a href="profil.html"><i class="fas fa-users"></i> Kel. 4</a>
+            <a href="profil.steffy.html"><i class="fas fa-user"></i> Steffy</a>
+            <a href="profil.seina.html"><i class="fas fa-user"></i> Seina</a>
+            <a href="profil.priscilla.html"
+              ><i class="fas fa-user"></i> Priscilla</a
+            >
+            <a href="profil.emily.html"><i class="fas fa-user"></i> Emily</a>
+          </div>
+        </div>
+
+        <!-- Product -->
+        <div class="dropdown">
+          <a href="javascript:void(0);" class="dropbtn">
+            Product <i class="fas fa-chevron-down"></i>
+          </a>
+          <div class="dropdown-content">
+            <a href="result-product.html">Result Klock</a>
+            <a href="coding-klock.html">Coding Klock</a>
+          </div>
+        </div>
+
+        <a href="index.html#contact">Contact</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="search"><i data-feather="search"></i></a>
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <section class="hero-product">
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="img/vid home fix.mp4" type="video/mp4" />
+  </video>
+</section>
+
+    <div class="main-card">
+      <h1>What's Your Uniform?</h1>
+      <h2 class="subtitle">Explore the SMAN 71 Uniform:</h2>
+
+      <div class="grid-seragam">
+        <div class="kartu-seragam" onclick="klikKartu('putihabu')">
+          <img
+            src="seragam/putihabu.png"
+            alt="Ikon Putih Abu"
+            class="gambar-ikon"
+          />
+          <h3>Putih Abu</h3>
+          <p>Senin, Selasa, Kamis</p>
+        </div>
+
+        <div class="kartu-seragam" onclick="klikKartu('pramuka')">
+          <img
+            src="seragam/pramuka.png"
+            alt="Ikon Pramuka"
+            class="gambar-ikon"
+          />
+          <h3>Pramuka</h3>
+          <p>Hari Rabu</p>
+        </div>
+
+        <div class="kartu-seragam" onclick="klikKartu('batik')">
+          <img src="seragam/batik.png" alt="Ikon Batik" class="gambar-ikon" />
+          <h3>Batik 71</h3>
+          <p>Jumat Ganjil</p>
+        </div>
+
+        <div class="kartu-seragam" onclick="klikKartu('sadariah')">
+          <img
+            src="seragam/sadariah.png"
+            alt="Ikon Sadariah"
+            class="gambar-ikon"
+          />
+          <h3>Sadariah</h3>
+          <p>Jumat Genap</p>
+        </div>
+
+        <div class="kartu-seragam" onclick="klikKartu('olahraga')">
+          <img
+            src="seragam/olahraga.png"
+            alt="Ikon Olahraga"
+            class="gambar-ikon"
+          />
+          <h3>Olahraga</h3>
+          <p>Pembiasaan Olahraga (Kamis)</p>
+        </div>
+      </div>
+    
+
+      <div class="input-area">
+        <select id="pilihan-hari" onchange="aturFiturInput()">
+          <option value="">--Pilih Hari--</option>
+          <option value="Senin">Senin</option>
+          <option value="Selasa">Selasa</option>
+          <option value="Rabu">Rabu</option>
+          <option value="Kamis">Kamis</option>
+          <option value="Jumat">Jumat</option>
+        </select>
+
+        <input
+          type="number"
+          id="angka-tanggal"
+          min="1"
+          max="31"
+          placeholder="Tanggal (1-31)"
+          style="display: none; width: 145px"
+        />
+
+        <label
+          class="olahraga-label"
+          id="wrapper-olahraga"
+          style="display: none"
+        >
+          <input type="checkbox" id="cek-olahraga" />Ada Pembiasaan Olahraga?
+        </label>
+
+        <button onclick="cekSeragamSmart()">Lihat Seragam</button>
+
+<!-- HASIL -->
+      <div id="kotak-hasil" class="result-card" style="display: none">
+        <h2 id="judul-hari">Hari</h2>
+
+        <div id="layout-konten" class="konten-bawah">
+          <div id="blok-gambar">
+            <img id="gambar-seragam" src="" alt="Seragam">
+            <img id="gambar-seragam-tambahan" src="" alt="Seragam Tambahan" style="display: none;" />
+          </div>
+
+          <p id="deskripsi-seragam">
+            Deskripsi seragam akan muncul di sini.
+          </p>
+        </div>
+      </div>
+
+    </div> <!-- PENUTUP MAIN CARD -->
+
+<!-- MEMORY MATCH -->
+<div class="memory-wrapper">
+    <div class="game-intro">
+        <h3>Klock Challenge 🧠</h3>
+        <p>Uji daya ingatmu dengan mencocokkan gambar seragam SMAN 71!<br>
+        Temukan semua pasangan kartu dalam waktu secepat mungkin.<br>
+        <strong>Yuk Uji Fokusmu !</strong></p>
+    </div>
+
+    <div class="header">
+        <h4>
+            <i class="fas fa-star"></i>
+            Memory Match
+            <i class="fas fa-star"></i>
+        </h4>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-label">Moves</div>
+                <div class="stat-value" id="moves">0</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-label">Time</div>
+                <div class="stat-value" id="time">0:00</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-label">Matches</div>
+                <div class="stat-value" id="matches">0/5</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-board" id="gameBoard"></div>
+
+    <div class="controls">
+        <button class="btn" onclick="newGame()">
+            <i class="fas fa-redo"></i>
+            New Game
+        </button>
+    </div>
+
+    <div class="modal" id="winModal">
+        <div class="modal-content">
+            <h2>
+                <i class="fas fa-trophy"></i>
+                You Win!
+                <i class="fas fa-trophy"></i>
+            </h2>
+
+            <p>
+                Moves: <span id="finalMoves"></span>
+                <br>
+                Time: <span id="finalTime"></span>
+            </p>
+
+            <button class="btn" onclick="newGame()">
+                Play Again
+            </button>
+        </div>
+    </div>
+
+</div>
+
+
+    <!-- JavaScript untuk mengatur input tanggal berdasarkan pilihan hari -->
+    <script>
+      function aturFiturInput() {
+        const hari = document.getElementById("pilihan-hari").value;
+        const inputTanggal = document.getElementById("angka-tanggal");
+        const cekOlahraga = document.getElementById("cek-olahraga");
+        const wrapperOlahraga = document.getElementById("wrapper-olahraga");
+
+        //Khusus hari jumat
+        if (hari === "Jumat") {
+          inputTanggal.style.display = "inline-block"; 
+        } else {
+          inputTanggal.style.display = "none";
+          inputTanggal.value = "";
+        }
+
+        //Khusus hari Kamis
+        if (hari === "Kamis") {
+          wrapperOlahraga.style.display = "inline-block"; 
+        } else {
+          wrapperOlahraga.style.display = "none";
+          cekOlahraga.checked = false;
+        }
+      }
+
+      //Mengatur kartu kotak bisa diklik
+      function klikKartu(jenisSeragam) {
+        const kotakHasil = document.getElementById("kotak-hasil");
+        const judulHari = document.getElementById("judul-hari");
+        const imgSeragam = document.getElementById("gambar-seragam");
+        const imgTambahan = document.getElementById("gambar-seragam-tambahan");
+        const deskripsi = document.getElementById("deskripsi-seragam");
+
+        //Ambil elemen input untuk otomatis saat kartu diklik
+        const pilihanHari = document.getElementById("pilihan-hari");
+        const inputTanggal = document.getElementById("angka-tanggal");
+        const cekOlahraga = document.getElementById("cek-olahraga");
+
+        imgTambahan.style.display = "none";
+        imgTambahan.src = "";
+
+        if (jenisSeragam === "putihabu") {
+          judulHari.innerText = "Seragam Putih Abu";
+          imgSeragam.src = "seragam/putihabu.png";
+          deskripsi.innerHTML =
+            "Putih Abu 😵‍💫🤍<br> <br> Dipakai paling sering, tiap (Senin, Selasa, dan Kamis) bareng rok atau celana abu andalan.<br> Kelihatannya simple, tapi tetep paling cocok buat vibes sekolah 😆";
+        } else if (jenisSeragam === "pramuka") {
+          judulHari.innerText = "Seragam Pramuka";
+          imgSeragam.src = "seragam/pramuka.png";
+          deskripsi.innerHTML =
+            "Hari Rabu = pramuka dayy 🤎🔥<br> <br> Pastikan atribut lengkap seperti: <br> dasi, ikat pinggang, dan kaos kaki hitam dipakai yaa. <br> Jangan lupa tampil rapi dan semangat selama kegiatan sekolah!!";
+
+        } else if (jenisSeragam === "batik") {
+          judulHari.innerText = "Seragam Batik 71";
+          imgSeragam.src = "seragam/batik.png";
+          deskripsi.innerHTML =
+            "Batik 71 timee 😆✨<br><br> Dipakai tiap hari (Jumat bertanggal Ganjil) dipadukan rok atau celana putih biar makin khas anak SMAN 71 Jakarta!!";
+
+        } else if (jenisSeragam === "sadariah") {
+          judulHari.innerText = "Seragam Sadariah";
+          imgSeragam.src = "seragam/sadariah.png";
+          deskripsi.innerHTML =
+            "Sadariahnyaa anak 71 ✨🤍 <br> <br> Dipakai hari Jumat dipadukan rok atau celana abu-abu.<br> Sopan, manis, dan vibes Jumatnya dapet banget 😆";
+
+        } else if (jenisSeragam === "olahraga") {
+          judulHari.innerText = "Seragam Olahraga";
+          imgSeragam.src = "seragam/olahraga.png";
+          deskripsi.innerHTML =
+            "Olahraga timee 💥🏃‍♀️<br> <br> Seragam ini dipakai disetiap kegiatan olahraga biar makin nyaman buat gerak ke sana-sini.<br> Santai, nyaman, tapi keliatan khasnya anak 71 🥳";
+
+        }
+
+        kotakHasil.style.display = "block";
+
+      // --- Transisi Otomatis scroll mulus ke kotak hasil ---
+        setTimeout(() => {
+        kotakHasil.scrollIntoView({ behavior: "smooth", block: "center" });
+         }, 100); 
+      }
+
+      //Fungsi untuk mendeteksi hari dan tanggal ganjil/genap
+      function cekSeragamSmart() {
+        const hari = document.getElementById("pilihan-hari").value;
+        const tanggal = document.getElementById("angka-tanggal").value;
+        const isOlahraga = document.getElementById("cek-olahraga").checked;
+
+        const kotakHasil = document.getElementById("kotak-hasil");
+        const judulHari = document.getElementById("judul-hari");
+        const imgSeragam = document.getElementById("gambar-seragam");
+        const imgTambahan = document.getElementById("gambar-seragam-tambahan");
+        const deskripsi = document.getElementById("deskripsi-seragam");
+        const layoutKonten = document.getElementById("layout-konten");
+
+if (hari === "Kamis" && isOlahraga) {
+  layoutKonten.classList.add("layout-kamis");
+} else {
+  layoutKonten.classList.remove("layout-kamis");
+}
+
+        //Validasi input wajib diisi
+        if (hari === "") {
+          alert("Silahkan pilih harinya dulu ya!");
+          return;
+        }
+
+        if (
+          hari === "Jumat" &&
+          (tanggal === "" || tanggal < 1 || tanggal > 31)
+        ) {
+          alert(
+            "Khusus hari Jumat, silahkan masukkan tanggal yang sesuai ya! (1-31)!",
+          );
+          return;
+        }
+
+        imgTambahan.style.display = "none";
+        imgTambahan.src = "";
+
+        //Aturan penentuan gambar dan teks seragam
+        if (hari === "Senin") {
+          judulHari.innerText = "Hari " + hari;
+          imgSeragam.src = "img/abu.jpeg";
+          deskripsi.innerHTML = "Seragam putih abu digunakan setiap <br> (SENIN, SELASA, KAMIS)<br><br>Atribut wajib:<br>• Dasi<br>• Ikat pinggang<br>• Kaos kaki putih<br><br>Khusus hari Senin, siswa wajib membawa topi saat upacara.";
+        } else if (hari === "Selasa") {
+          judulHari.innerText = "Hari Rabu";
+          imgSeragam.src = "img/abu2.jpeg";
+          deskripsi.innerHTML = "Seragam putih abu digunakan setiap <br> (SENIN, SELASA, KAMIS)<br><br>Atribut wajib:<br>• Dasi<br>• Ikat pinggang<br>• Kaos kaki putih<br><br>Khusus hari Senin, siswa wajib membawa topi saat upacara.";
+        } else if (hari === "Rabu") {
+          judulHari.innerText = "Hari Rabu";
+          imgSeragam.src = "img/pramuka.jpeg";
+          deskripsi.innerHTML = "Seragam pramuka digunakan setiap hari (RABU).<br><br>Atribut wajib:<br>• Dasi pramuka<br>• Ikat pinggang<br>• Kaos kaki hitam<br>• Badge dan atribut lengkap<br><br>Siswa diharapkan menggunakan seragam dengan rapi sesuai ketentuan sekolah.";
+        } else if (hari === "Kamis") {
+          if (isOlahraga) {
+            judulHari.innerText = "Hari Kamis (Pembiasaan Olahraga)";
+            imgSeragam.src = "img/olga.jpeg";
+            imgTambahan.src = "img/abu2.jpeg";
+            imgTambahan.style.display = "inline";
+            deskripsi.innerHTML =
+              "Wajib memakai baju olahraga SMAN 71 dari rumah untuk pembiasaan. Seluruh siswa diwajibkan mengikut kegiatan senam bersama. <br> <br>NOTES: Membawa seragam ganti Putih Abu-abu lengkap.";
+          } else {
+            judulHari.innerText = "Hari Kamis";
+            imgSeragam.src = "img/abu2.jpeg";
+            deskripsi.innerHTML = "Seragam putih abu digunakan setiap <br> (SENIN, SELASA, KAMIS)<br><br>Atribut wajib:<br>• Dasi<br>• Ikat pinggang<br>• Kaos kaki putih";
+          }
+        } else if (hari === "Jumat") {
+          if (tanggal % 2 === 0) {
+            judulHari.innerText =
+              "Hari Jumat (Tanggal " + tanggal + " - Genap)";
+            imgSeragam.src = "img/sadariah.jpeg";
+            deskripsi.innerHTML = "Seragam sadariah digunakan setiap hari (JUMAT).<br><br>Ketentuan seragam:<br>• Bagi laki-laki: menggunakan celana abu-abu<br>• Bagi perempuan: menggunakan rok abu-abu<br>• Mengenakan kerudung bagi siswi muslim.<br><br>";
+          } else {
+            judulHari.innerText =
+              "Hari Jumat (Tanggal " + tanggal + " - Ganjil)";
+            imgSeragam.src = "img/batik.jpeg";
+            deskripsi.innerHTML = "Batik khas SMAN 71 digunakan setiap hari Jumat.<br><br>Ketentuan seragam:<br>• Memakai kaos kaki putih<br>• Bagi laki-laki: menggunakan celana putih<br>• Bagi perempuan: menggunakan rok putih<br><br>Seragam batik menjadi salah satu identitas khas siswa SMAN 71 Jakarta.";
+          }
+        }
+
+        //Memunculkan kotak hasil setelah data diisi
+        kotakHasil.style.display = "block";
+      
+        // --- Transisi Otomatis scroll mulus ke kotak hasil ---
+        setTimeout(() => {kotakHasil.scrollIntoView({ behavior: "smooth", block: "center" }); 
+        }, 100);
+      }
+
+/* MEMORY MATCH JAVASCRIPT*/
+
+function checkForMatch() {
+  let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+
+  if (isMatch) {
+    disableCards();
+  } else {
+    unflipCards();
+  }
+}
+
+function disableCards() {
+  firstCard.classList.add('flipped');
+  secondCard.classList.add('flipped');
+  firstCard.classList.add('matched');
+  secondCard.classList.add('matched');
+  resetBoard();
+}
+
+function unflipCards() {
+  lockBoard = true;
+  
+  setTimeout(() => {
+    if (!firstCard.classList.contains('matched')) {
+      firstCard.classList.remove('flipped');
+    }
+    if (!secondCard.classList.contains('matched')) {
+      secondCard.classList.remove('flipped');
+    }
+    
+    resetBoard();
+  }, 1000);
+}
+
+var cardPairs = [
+    { id: 1, cewe: 'img/batik-cewe.jpeg', cowo: 'img/batik-cowo.jpeg' },
+    { id: 2, cewe: 'img/cewe-abu.jpeg', cowo: 'img/cowo-abu.jpeg' },
+    { id: 3, cewe: 'img/cewe-pramuka.jpeg', cowo: 'img/cowo-pramuka.jpeg' },
+    { id: 4, cewe: 'img/olga-cewe.jpeg', cowo: 'img/olga-cowo.jpeg' },
+    { id: 5, cewe: 'img/sadariah-cewe.jpeg', cowo: 'img/sadariah-cowo.jpeg' }
+];
+
+var firstCard = null;
+var secondCard = null;
+var canFlip = true;
+
+var matches = 0;
+var moves = 0;
+
+var seconds = 0;
+var timerRunning = false;
+var timerInterval;
+
+function startGame() {
+    var gameBoard = document.getElementById('gameBoard');
+    gameBoard.innerHTML = '';
+
+    clearInterval(timerInterval);
+
+    var cardImages = [];
+
+    for (var i = 0; i < cardPairs.length; i++) {
+        cardImages.push({ id: cardPairs[i].id, src: cardPairs[i].cewe });
+        cardImages.push({ id: cardPairs[i].id, src: cardPairs[i].cowo });
+    }
+
+
+    cardImages.sort(function () {
+        return Math.random() - 0.5;
+    });
+
+    for (var i = 0; i < cardImages.length; i++) {
+        var card = document.createElement('div');
+        card.className = 'card';
+        card.dataset.pairId = cardImages[i].id;
+
+        card.innerHTML =
+            '<div class="card-front">' +
+                '<i class="fas fa-heart"></i>' +
+            '</div>' +
+            '<div class="card-back">' +
+                '<img src="' + cardImages[i].src + '">' +
+            '</div>';
+
+        card.onclick = flipCard;
+        gameBoard.appendChild(card);
+    }
+
+    firstCard = null;
+    secondCard = null;
+    canFlip = true;
+    matches = 0;
+    moves = 0;
+    seconds = 0;
+    timerRunning = false;
+
+    updateStats();
+}
+
+function flipCard() {
+    if (!canFlip) return;
+    if (this.classList.contains('flipped')) return;
+    if (this.classList.contains('matched')) return;
+
+    if (!timerRunning) {
+        startTimer();
+    }
+
+    this.classList.add('flipped');
+
+    if (firstCard == null) {
+        firstCard = this;
+    } else {
+        secondCard = this;
+        canFlip = false;
+        moves++;
+        
+        updateStats();
+        checkMatch();
+    }
+}
+
+function checkMatch() {
+    var isMatch = firstCard.dataset.pairId == secondCard.dataset.pairId;
+
+    if (isMatch) {
+        setTimeout(function () {
+            firstCard.classList.add('matched');
+            secondCard.classList.add('matched');
+            matches++;
+
+            updateStats();
+            resetCards();
+
+            if (matches == 5) {
+                endGame();
+            }
+        }, 500);
+    } else {
+        setTimeout(function () {
+            firstCard.classList.remove('flipped');
+            secondCard.classList.remove('flipped');
+            resetCards();
+        }, 1000);
+    }
+}
+
+function resetCards() {
+    firstCard = null;
+    secondCard = null;
+    canFlip = true;
+}
+
+function startTimer() {
+    timerRunning = true;
+    timerInterval = setInterval(function () {
+        seconds++;
+        updateStats();
+    }, 1000);
+}
+
+function updateStats() {
+    document.getElementById('moves').textContent = moves;
+    document.getElementById('matches').textContent = matches + '/5';
+
+    var mins = Math.floor(seconds / 60);
+    var secs = seconds % 60;
+
+    if (secs < 10) {
+        secs = '0' + secs;
+    }
+
+    document.getElementById('time').textContent = mins + ':' + secs;
+}
+
+function endGame() {
+    clearInterval(timerInterval);
+
+    document.getElementById('finalMoves').textContent = moves;
+    document.getElementById('finalTime').textContent = document.getElementById('time').textContent;
+    document.getElementById('winModal').classList.add('show');
+}
+
+function newGame() {
+    document.getElementById('winModal').classList.remove('show');
+    startGame();
+}
+
+startGame();
+
+    </script>
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      feather.replace();
+    </script>
+
+<!-- Audio -->
+<audio id="bg-music" loop preload="auto">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- Dropdown Script -->
+<script>
+// tutup dropdown saat klik di luar
+window.addEventListener("click", function () {
+  document.querySelectorAll(".dropdown").forEach(drop => {
+    drop.classList.remove("active");
+  });
+});
+
+// buka dropdown saat tombol diklik
+document.querySelectorAll(".dropbtn").forEach(btn => {
+  btn.addEventListener("click", function (e) {
+    e.stopPropagation();
+
+    // tutup dropdown lain
+    document.querySelectorAll(".dropdown").forEach(drop => {
+      if (drop !== this.parentElement) {
+        drop.classList.remove("active");
+      }
+    });
+
+    this.parentElement.classList.toggle("active");
+  });
+});
+</script>
+
+<!--SCRIPT: AUDIO -->
+<script>
+  const audio = document.getElementById("bg-music");
+  function playAudio() {
+    const savedPosition = localStorage.getItem("audioPosition");
+    if (savedPosition) {
+      audio.currentTime = parseFloat(savedPosition);
+    }
+    audio.play().catch(e => console.log("Menunggu interaksi user..."));
+  }
+  window.addEventListener("beforeunload", () => {
+    localStorage.setItem("audioPosition", audio.currentTime);
+  });
+  window.addEventListener("load", () => {
+    playAudio();
+  });
+  document.body.addEventListener('click', () => {
+    if (audio.paused) {
+      playAudio();
+    }
+  }, { once: true });
+</script>
+
+    <!-- My JavaScript -->
+    <script src="script.js"></script>
+
+
+  </body>
+</html>
