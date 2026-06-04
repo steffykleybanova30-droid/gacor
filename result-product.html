@@ -522,16 +522,22 @@
     0 0 40px rgba(216,255,250,.7),
     0 8px 20px rgba(185,251,255,.7);
 }
+
+
+.dropdown {
+  position: relative;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  z-index: 999;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown-content.show {
+.dropdown.active .dropdown-content {
   display: block;
 }
 
@@ -1265,7 +1271,7 @@ startGame();
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<!-- SCRIPT PENTING: Letakkan di paling bawah sebelum </body> -->
+<!-- SCRIPT PENTING -->
 <script>
   const audio = document.getElementById("bg-music");
   function playAudio() {
@@ -1286,6 +1292,33 @@ startGame();
       playAudio();
     }
   }, { once: true });
+</script>
+
+
+<!-- Dropdown Script -->
+<script>
+// tutup dropdown saat klik di luar
+window.addEventListener("click", function () {
+  document.querySelectorAll(".dropdown").forEach(drop => {
+    drop.classList.remove("active");
+  });
+});
+
+// buka dropdown saat tombol diklik
+document.querySelectorAll(".dropbtn").forEach(btn => {
+  btn.addEventListener("click", function (e) {
+    e.stopPropagation();
+
+    // tutup dropdown lain
+    document.querySelectorAll(".dropdown").forEach(drop => {
+      if (drop !== this.parentElement) {
+        drop.classList.remove("active");
+      }
+    });
+
+    this.parentElement.classList.toggle("active");
+  });
+});
 </script>
 
     <!-- My JavaScript -->
