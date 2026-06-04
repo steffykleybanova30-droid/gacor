@@ -574,8 +574,7 @@ body {
   left: 0;
 }
 
-.dropdown.active .dropdown-content,
-.dropdown-content.show {
+.dropdown.active .dropdown-content {
   display: block;
 }
 .dropdown.active .arrow-icon {
