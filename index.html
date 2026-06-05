@@ -66,10 +66,10 @@
           <a href="javascript:void(0);" class="dropbtn">
             Product <i class="fas fa-chevron-down"></i>
           </a>
-            <div class="dropdown-content">
-              <a href="gacor/result-product.html">Result Klock</a>
-              <a href="gacor/coding-klock.html">Coding Klock</a>
-            </div>
+          <div class="dropdown-content">
+            <a href="result-product.html">Result Klock</a>
+            <a href="coding-klock.html">Coding Klock</a>
+          </div>
         </div>
 
         <a href="index.html#contact">Contact</a>
@@ -277,27 +277,6 @@
 
 <!-- SCRIPT PENTING: Letakkan di paling bawah sebelum </body> -->
 <script>
-  document.querySelectorAll(".dropbtn").forEach((btn) => {
-  btn.addEventListener("click", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const dropdown = btn.parentElement;
-
-    document.querySelectorAll(".dropdown").forEach((d) => {
-      if (d !== dropdown) d.classList.remove("active");
-    });
-
-    dropdown.classList.toggle("active");
-  });
-});
-
-document.addEventListener("click", function () {
-  document.querySelectorAll(".dropdown").forEach((d) => {
-    d.classList.remove("active");
-  });
-});
-  
   const audio = document.getElementById("bg-music");
 
   // Fungsi untuk memutar musik dari posisi terakhir
