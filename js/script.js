@@ -13,21 +13,27 @@ document.addEventListener("click", function (e) {
   }
 });
 
-const dropdown = document.querySelector(".dropdown");
-const dropbtn = document.querySelector(".dropbtn");
+document.querySelectorAll(".dropbtn").forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
 
-// 1. Ketika tombol Profil diklik, buka atau tutup dropdown
-dropbtn.addEventListener("click", function (e) {
-  e.preventDefault(); // Mencegah lompat halaman jika menggunakan tag <a>
-  e.stopPropagation(); // Mencegah klik ini memicu event di luar dropdown
-  dropdown.classList.toggle("active");
+    const dropdown = btn.parentElement;
+
+    // tutup dropdown lain
+    document.querySelectorAll(".dropdown").forEach((d) => {
+      if (d !== dropdown) d.classList.remove("active");
+    });
+
+    // toggle yang diklik
+    dropdown.classList.toggle("active");
+  });
 });
 
-// 2. Ketika ngeklik di mana saja di luar menu, dropdown akan otomatis menutup sendiri
-document.addEventListener("click", function (e) {
-  if (!dropdown.contains(e.target)) {
-    dropdown.classList.remove("active");
-  }
+document.addEventListener("click", function () {
+  document.querySelectorAll(".dropdown").forEach((d) => {
+    d.classList.remove("active");
+  });
 });
 
 // ANIMASI FOTO MEMBER //
