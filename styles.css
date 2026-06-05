@@ -663,13 +663,13 @@ body {
     width: 100%; /* Dropdown memenuhi sidebar di mobile */
   }
 
-  .dropdown-content {
-    position: relative; /* Mengubah posisi menjadi relative agar tidak menabrak menu lain di mobile */
-    top: 0;
-    box-shadow: none;
-    background-color: rgba(255, 255, 255, 0.05); /* Beri background tipis */
-    width: 100%;
-  }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(1, 1, 1, 0.95); /* Tambahkan kurung tutup ) dan titik koma ; */
+  min-width: 160px; /* Tambahkan min-width agar tidak gepeng */
+  z-index: 9999;    /* Tambahkan z-index agar tidak tertutup elemen lain */
+}
 
   .navbar .navbar-nav a::after {
     display: none;
