@@ -7,7 +7,17 @@ hamburger.onclick = (e) => {
   navbarNav.classList.toggle("active");
 };
 
+// Gabungkan semua fungsi klik di dokumen jadi satu
 document.addEventListener("click", function (e) {
+  // 1. Logika untuk menutup Dropdown
+  // Jika yang diklik BUKAN elemen .dropdown, maka semua dropdown ditutup
+  if (!e.target.closest(".dropdown")) {
+    document.querySelectorAll(".dropdown").forEach((d) => {
+      d.classList.remove("active");
+    });
+  }
+
+  // 2. Logika untuk menutup Hamburger Menu
   if (!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
     navbarNav.classList.remove("active");
   }
