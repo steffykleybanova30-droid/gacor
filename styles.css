@@ -93,32 +93,27 @@ body {
 }
 
 /* Hero Section */
-/* ==================== HERO SECTION (GAYA DISRUPT) ==================== */
 .hero {
   width: 100%;
-  min-height: 90vh; /* Tinggi pas agar foto background terlihat luas */
+  min-height: 90vh; 
   display: flex;
   align-items: center;
   justify-content: flex-start;
   position: relative;
-
-  /* PENGATURAN GAMBAR BACKGROUND */
-  background-image: url("member/kolase.jpeg"); /* <-- GANTI DENGAN FILE FOTOMU */
+  background-image: url("member/kolase.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Efek parallax halus saat di-scroll */
+  background-attachment: fixed;
   overflow: hidden;
 }
 
-/* Lapisan Gelap Transparan di Atas Foto (Overlay) */
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* Gradasi: gelap di kiri tempat teks agar kontras, agak terang di kanan */
   background: linear-gradient(
     to right,
     rgba(10, 8, 54, 0.85) 30%,
@@ -129,27 +124,22 @@ body {
 
 /* LOGO KLOCK */
 .floating-logo {
-  max-width: 330px; /* Sesuaikan ukuran */
+  max-width: 330px;
   filter: drop-shadow(
     0px 10px 15px rgba(171, 197, 255, 0.854)
-  ); /* Shadow agar lebih timbul */
-  animation: float 3s ease-in-out infinite; /* Animasi melayang */
+  ); 
+  animation: float 3s ease-in-out infinite; 
 }
 
-/* Kodingan animasi naik turun */
 @keyframes float {
   0% {
-    transform: translateY(0px);
-  }
+    transform: translateY(0px);}
   50% {
-    transform: translateY(-20px); /* Naik 20px */
-  }
+    transform: translateY(-20px);}
   100% {
-    transform: translateY(0px);
-  }
+    transform: translateY(0px);}
 }
 
-/* Pembungkus Dalam Hero (Mengikuti Jarak Jeda Kiri 7%) */
 .hero-inner {
   display: flex;
   align-items: center;
@@ -159,7 +149,7 @@ body {
   margin: 0 auto;
   padding: 0 7%;
   position: relative;
-  z-index: 2; /* Mengangkat teks ke atas lapisan hitam overlay */
+  z-index: 2;
 }
 
 .hero-content-right {
@@ -169,11 +159,10 @@ body {
 }
 
 .hero-logo {
-  max-width: 350px; /* Atur ukuran sesuai kebutuhan */
+  max-width: 350px; 
   height: auto;
 }
 
-/* Konten Teks Rata Kiri (Box Transparan Kebiruan Lama Sudah Dihapus) */
 .hero-content-left {
   max-width: 42rem;
   text-align: left;
@@ -199,11 +188,10 @@ body {
   color: #e2e8f0;
   line-height: 1.6;
   font-family:
-    "Poppins", sans-serif; /* Menggunakan font bersih untuk deskripsi */
+    "Poppins", sans-serif; 
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Tombol Merah Kapsul "Get Started" Di Bawah Teks */
 .cta-hero-btn {
   display: inline-block;
   margin-top: 15px;
@@ -224,14 +212,11 @@ body {
 
 @keyframes floatAnimation {
   0% {
-    transform: translateY(0px); /* Posisi awal */
-  }
+    transform: translateY(0px); }
   50% {
-    transform: translateY(-5px); /* Melayang naik ke atas 10 pixel */
-  }
+    transform: translateY(-5px); }
   100% {
-    transform: translateY(0px); /* Kembali ke posisi semula */
-  }
+    transform: translateY(0px); }
 }
 
 .cta-hero-btn:hover {
@@ -240,7 +225,6 @@ body {
   box-shadow: 0 8px 20px rgba(118, 150, 255, 0.6);
 }
 
-/* ==================== 4 CARDS CONTAINER ==================== */
 .floating-features {
   padding: 0 10%;
   background-color: var(--bg);
@@ -250,20 +234,18 @@ body {
 .cards-container {
   max-width: 995px;
   margin: -70px auto 0 auto;
-  display: flex; /* Menggunakan Flexbox agar bisa pakai trik margin otomatis */
-  align-items: stretch; /* Memastikan semua tinggi kotak sama rata */
+  display: flex; 
+  align-items: stretch; 
   position: relative;
   z-index: 10;
   width: 100%;
 }
 
-/* Desain Kartu Putih (Saling Menempel Rapat) */
-/* Desain Kartu Putih (Saling Menempel Rapat) */
 .info-card {
-  flex: 1; /* Membagi lebar 3 kotak putih sama rata */
+  flex: 1;
   background-color: #ffffff;
   padding: 25px 13px 13px 13px;
-  border-radius: 0; /* Semua kotak putih default-nya datar/siku-siku */
+  border-radius: 0; 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   text-align: left;
   display: flex;
@@ -272,18 +254,16 @@ body {
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
-  border-right: 1px solid #f0f0f0; /* Garis pembatas tipis antar kotak putih */
+  border-right: 1px solid #f0f0f0; 
 }
 
-/* Hanya melengkungkan sudut luar kiri atas di Kotak Pertama */
 .info-card:first-child {
   border-radius: 15px 0 0 0;
 }
 
-/* Kotak ketiga dibuat benar-benar siku-siku tanpa melengkung */
 .info-card:nth-child(3) {
   border-radius: 0;
-  border-right: none; /* Menghilangkan garis pembatas di ujung kanan blok putih */
+  border-right: none; 
 }
 
 .info-card:hover {
@@ -315,21 +295,18 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/* Desain Kartu Keempat (Merah - Cek Jadwal - Terpisah Sendiri) */
 .cta-card {
-  flex: 1; /* Lebar sama rata dengan kotak putih */
+  flex: 1; 
   background-color: #1e47b8;
   color: #ffffff;
   padding: 40px 25px;
-  border-radius: 20px; /* Melengkung di semua sisi */
+  border-radius: 20px; 
   box-shadow: 0 15px 35px rgba(45, 141, 252, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.3s ease;
   text-align: left;
-
-  /* KUNCI UTAMA: Memberikan jarak pisah otomatis hanya untuk kotak merah */
   margin-left: 25px;
 }
 
@@ -353,7 +330,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/* Tombol Putih */
 .btn-white-action {
   background-color: #ffffff;
   color: var(--bg);
@@ -375,7 +351,7 @@ body {
   color: #ffffff;
 }
 
-/* Responsive (Supaya rapi di HP) */
+/* Responsive HP */
 @media (max-width: 992px) {
   .cards-container {
     flex-direction: column;
@@ -420,21 +396,20 @@ body {
   margin-bottom: 4rem;
 }
 
-/* ==================== KUNCI UTAMA UTK BERJEJER KE SAMPING ==================== */
 .member-cards-row {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important; /* Mengunci paksa agar HARAM hukumnya turun ke bawah */
-  justify-content: center !important; /* Membuat barisan foto presisi di tengah layar */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; 
+  justify-content: center;
   align-items: flex-start;
-  gap: 2.5rem; /* Jarak antar kartu foto */
+  gap: 2.5rem; 
   width: 100%;
   margin-top: 1rem;
 }
 
 .member-card {
-  flex: 0 0 auto !important; /* Mencegah kartu menciut atau gepeng */
-  width: 220px; /* Lebar kotak pembungkus tiap member */
+  flex: 0 0 auto; 
+  width: 220px; 
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -442,7 +417,7 @@ body {
 }
 
 .member-card-img {
-  width: 200px; /* Ukuran pas biar muat sebaris banyak di desktop */
+  width: 200px; 
   height: 200px;
   border-radius: 50%;
   border: 3px solid var(--primary);
@@ -450,48 +425,39 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   opacity: 0;
   transform: translateY(60px) scale(0.9);
-  /* Durasi kemunculan foto (0.8 detik) biar gerakannya halus */
   transition:
     opacity 0.8s ease-out,
     transform 0.8s ease-out;
 }
 
-/* Kondisi setelah terpicu scroll turun: foto naik dan MENETAP */
 .member-card-img.sudah-muncul {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
 
-/* 2. Proses pergerakan naik dan memudar hilang */
 @keyframes munculDariBawah {
   from {
     opacity: 0;
-    transform: translateY(60px) scale(0.9);
-  }
+    transform: translateY(60px) scale(0.9);}
   to {
     opacity: 1;
-    transform: translateY(0) scale(1); /* Kembali ke posisi semula dan ukuran pas 150px */
-  }
+    transform: translateY(0) scale(1);}
 }
 
-/* Foto 1 (Emily) - Muncul paling awal */
 .member-card:nth-child(1) .member-card-img {
   animation-range: entry 10% cover 45%;
 }
 
-/* Foto 2 (Steffy) - Nunggu Emily agak naik baru mulai muncul */
 .member-card:nth-child(2) .member-card-img {
-  animation-range: entry 30% cover 55%; /* Selisih 20% dari Emily */
+  animation-range: entry 30% cover 55%;
 }
 
-/* Foto 3 (Seina) - Nunggu Steffy agak naik baru mulai muncul */
 .member-card:nth-child(3) .member-card-img {
-  animation-range: entry 50% cover 65%; /* Selisih 20% dari Steffy */
+  animation-range: entry 50% cover 65%;
 }
 
-/* Foto 4 (Priscilla) - Muncul paling akhir */
 .member-card:nth-child(4) .member-card-img {
-  animation-range: entry 70% cover 75%; /* Selisih 20% dari Seina */
+  animation-range: entry 70% cover 75%;
 }
 
 .member-card-title {
@@ -510,19 +476,19 @@ body {
 
 @keyframes gantiWarna {
   0% {
-    color: #ffffff; /* Awalnya putih */
+    color: #ffffff; 
   }
   50% {
-    color: #63bbf6; /* Di tengah-tengah berubah jadi biru terang */
+    color: #63bbf6;
   }
   100% {
-    color: #ffffff; /* Akhirnya kembali jadi putih lagi */
+    color: #ffffff; 
   }
 }
 
 .member-card-title a:hover {
   color: #3b82f6 !important;
-  transform: scale(1.05); /* Sedikit membesar saat disentuh */
+  transform: scale(1.05);
   transition: transform 0.2s ease;
 }
 
@@ -539,7 +505,6 @@ body {
   margin-top: 0.5rem;
 }
 
-/* Dropdown Profil Section */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -552,7 +517,7 @@ body {
   color: #fff;
   font-size: 1.4rem;
   padding: 0.5rem 1rem;
-  cursor: pointer; /* Diubah agar pengguna tahu ini bisa berinteraksi/diklik */
+  cursor: pointer; 
 }
 
 .dropdown-content {
@@ -563,7 +528,7 @@ body {
     1,
     1,
     0.95
-  ); /* Sedikit digelapkan agar teks terbaca jelas */
+  ); 
   backdrop-filter: blur(5px);
   min-width: 160px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
@@ -606,9 +571,7 @@ body {
   vertical-align: middle;
 }
 
-/* ==========================================================================
-   MEDIA QUERIES (RESPONSIVE)
-   ========================================================================== */
+/* Layar RESPONSIVE*/
 
 /* Laptop / Desktop Kecil */
 @media (max-width: 1366px) {
@@ -633,7 +596,7 @@ body {
     position: absolute;
     top: 100%;
     right: -100%;
-    width: 200px; /* Sedikit dilebarkan agar muat teks dropdown */
+    width: 200px;
     height: 100vh;
     background-color: rgba(2, 25, 44, 0.98);
     display: flex;
@@ -660,15 +623,15 @@ body {
   }
 
   .dropdown {
-    width: 100%; /* Dropdown memenuhi sidebar di mobile */
+    width: 100%;
   }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: rgba(1, 1, 1, 0.95); /* Tambahkan kurung tutup ) dan titik koma ; */
-  min-width: 160px; /* Tambahkan min-width agar tidak gepeng */
-  z-index: 9999;    /* Tambahkan z-index agar tidak tertutup elemen lain */
+  background-color: rgba(1, 1, 1, 0.95); 
+  min-width: 160px; 
+  z-index: 9999;
 }
 
   .navbar .navbar-nav a::after {
@@ -728,7 +691,6 @@ body {
     font-size: 55%;
   }
 
-  /* Hero Section */
   .hero {
     min-height: 80vh;
     background-attachment: scroll;
@@ -736,11 +698,11 @@ body {
 
   .hero-inner {
     flex-direction: row;
-    align-items: flex-start !important; /* Logo di atas, teks mengikuti samping/bawah */
-    text-align: left !important;
-    padding-top: 80px !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+    align-items: flex-start; 
+    text-align: left;
+    padding-top: 80px;
+    padding-left: 15px;
+    padding-right: 15px;
     gap: 5px;
   }
 
@@ -749,27 +711,26 @@ body {
     min-width: 0;
   }
 
-  /* Logo Hero & Floating */
   .hero-logo,
   .floating-logo {
     max-width: 200px;
     flex-shrink: 0;
-    margin: 0 !important;
+    margin: 0;
   }
 
   /* Cards Container */
   .cards-container {
-    display: grid !important; /* Gunakan grid agar lebih presisi */
-    grid-template-columns: repeat(2, 1fr); /* Paksa 2 kolom */
-    gap: 10px !important; /* Jarak antar kotak */
+    display: grid !important; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px !important; 
     padding: 0 10px !important;
     margin-top: -40px !important;
   }
 
-  /* Mengatur tampilan setiap kartu di dalam grid */
+  /* Tampilan setiap kartu di dalam grid */
   .info-card {
     padding: 15px 10px;
-    height: 100%; /* Biar tinggi kotak rata */
+    height: 100%; 
     border-radius: 0 40px 0 0;
 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -784,63 +745,59 @@ body {
     border-radius: 0;
   }
 
-  /* Membuat Cek Jadwal (kartu biru) melebar penuh di bawah */
   .cta-card {
-    grid-column: span 2; /* Kartu biru memakan 2 kolom (full lebar) */
+    grid-column: span 2; 
     padding: 20px;
     margin-top: 10px;
   }
 
   .cta-card h2 {
-    font-size: 2.5rem !important; /* Disesuaikan agar lebih besar dan menonjol */
-    margin-bottom: 15px !important;
+    font-size: 2.5rem; 
+    margin-bottom: 15px;
   }
 
   .cta-card p {
-    font-size: 1.5rem !important; /* Disesuaikan agar lebih nyaman dibaca */
-    margin-bottom: 25px !important;
+    font-size: 1.5rem; 
+    margin-bottom: 25px;
   }
 
   .btn-white-action {
-    padding: 18px !important; /* Tombol juga ikut membesar agar proporsional */
-    font-size: 1.2rem !important;
+    padding: 18px; 
+    font-size: 1.2rem;
   }
 
-  /* Perkecil ikon dan teks agar tidak penuh di kotak kecil */
   .info-card .icon-box {
-    font-size: 2.5rem !important;
+    font-size: 2.5rem;
     margin-bottom: 10px;
   }
   .info-card h3 {
-    font-size: 1.8rem !important;
+    font-size: 1.8rem;
   }
   .info-card p {
-    font-size: 1.3rem !important;
+    font-size: 1.3rem;
     line-height: 1.4;
   }
 
-  /* Member Section - GRID 2 KOLOM */
   .member-cards-row {
-    display: grid !important; /* Ubah ke grid */
-    grid-template-columns: repeat(2, 1fr); /* Paksa 2 kolom */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2px 6px;
-    padding: 20px 15px !important;
-    overflow-x: hidden !important; /* Matikan scroll samping */
-    justify-items: center; /* Memastikan foto tetap di tengah kolom */
+    padding: 20px 15px;
+    overflow-x: hiddeN; 
+    justify-items: center; 
   }
 
   .member-card {
-    width: 100% !important; /* Mengisi lebar kolom */
-    min-width: auto !important;
-    margin: 0 !important;
+    width: 100%;
+    min-width: auto;
+    margin: 0;
   }
 
   .member-card-img {
-    width: 150px !important; /* Dikecilkan sedikit agar tidak terlalu mepet */
-    height: 150px !important;
+    width: 150px;
+    height: 150px;
   }
 
-  /* Footer Mobile */
   .bg-footer .row {
     flex-direction: column;
     gap: 2rem;
@@ -851,62 +808,49 @@ body {
 /* --- FOOTER --- */
 .bg-footer {
   background-color: #1a426e;
-  color: #fff;
-  padding: 60px 0;
+  color: #ffffff;
+  padding: 60px 0; 
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .bg-footer .row {
   display: flex;
   justify-content: space-between;
   gap: 4rem;
   padding: 0 7%;
 }
+
 .footer-left,
 .footer-right {
   flex: 1;
 }
 
-/* ==========================================
-   STYLE FOOTER - POSISI BERSAMPINGAN
-   ========================================== */
-
-.bg-footer {
-  background-color: #1a426e; /* Warna biru gelap sesuai gambar */
-  color: #ffffff;
-  padding: 60px 0; /* Memberi jarak atas dan bawah di dalam footer */
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Mengatur bungkus logo dan teks agar sejajar ke samping */
 .logo-wrapper {
   display: flex;
-  align-items: center; /* Membuat logo dan teks rata tengah secara vertikal */
+  align-items: center;
   margin-bottom: 20px;
 }
 
-/* Mengatur ukuran dan jarak logo di samping tulisan */
 .footer-logo {
   width: 45px;
   height: 45px;
-  margin-right: 15px; /* Jarak antara logo dan tulisan SMAN */
+  margin-right: 15px; 
   object-fit: contain;
 }
 
-/* Style Judul (SMAN 71 & Kontak) */
 .bg-footer h5 {
   font-size: 1.4rem;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 0; /* Dibuat 0 karena jarak bawah sudah diatur oleh .logo-wrapper */
+  margin-bottom: 0; 
   letter-spacing: 0.5px;
 }
 
-/* Style khusus judul Kontak agar punya jarak bawah yang sama */
 .footer-right h5 {
   margin-top: 35px;
   margin-bottom: 5px;
 }
 
-/* Style untuk isi teks deskripsi dan alamat */
 .bg-footer p {
   font-size: 17px;
   line-height: 1.6;
@@ -914,7 +858,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* List Kontak */
 .contact-list {
   list-style: none;
   padding: 0;
@@ -930,11 +873,10 @@ body {
 }
 
 .contact-list li i {
-  margin-right: 10px; /* Jarak antara ikon telepon/email dengan teksnya */
+  margin-right: 10px; 
   width: 16px;
 }
 
-/* Ikon Sosial Media Bulat */
 .social-wrapper {
   margin-top: 50px;
   margin-bottom: 100px;
@@ -958,21 +900,19 @@ body {
   background-color: #ffffff;
   color: #1a426e;
 }
-/* --- Perbaikan agar HTML kamu bisa langsung ke samping --- */
 
 .bg-footer .row {
-  display: flex; /* Mengaktifkan mode sejajar ke samping */
-  justify-content: space-between; /* Memberi jarak otomatis kanan-kiri */
-  gap: 4rem; /* Jarak aman antar kolom */
-  padding: 0 7%; /* Menyelaraskan dengan jarak navbar kamu (7%) */
+  display: flex; 
+  justify-content: space-between; 
+  gap: 4rem; 
+  padding: 0 7%; 
 }
 
 .footer-left,
 .footer-right {
-  flex: 1; /* Membagi lebar 50% kiri dan 50% kanan */
+  flex: 1; 
 }
 
-/* Biar pas dibuka di HP tidak rusak (kembali numpuk ke bawah) */
 @media (max-width: 768px) {
   .bg-footer .row {
     flex-direction: column;
