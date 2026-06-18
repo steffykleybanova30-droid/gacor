@@ -63,57 +63,51 @@
       /* Ikon Sosial Media */
       .social-media {
         display: flex;
-        gap: 1px; /* Jarak antar kotak */
-        margin-bottom: 2rem; /* Jarak ke bawahnya */
+        gap: 1px; 
+        margin-bottom: 2rem; 
       }
-
-      /* Desain kotak abu-abu gelap pembungkus icon */
+      
       .social-icon {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 40px;
         height: 40px;
-        background-color: #222222; /* Warna kotak gelap */
+        background-color: #222222; 
         border-radius: 12px;
         font-size: 1.6rem;
         text-decoration: none;
-
-        /* Berikan border transparan agar saat hover kotak tidak kaget/bergeser */
         border: 1.5px solid transparent;
-
-        /* Transisi halus selama 0.2 detik saat kursor menyentuh kotak */
         transition:
           transform 0.2s ease,
           border-color 0.2s ease;
       }
 
-      /* Warna masing-masing icon */
+      /* Warna icon */
       .social-icon.ig {
-        color: #e1306c; /* Pink/Merah Instagram */
+        color: #e1306c;
       }
 
       .social-icon.yt {
-        color: #ff0000; /* Merah YouTube */
+        color: #ff0000; 
       }
 
       .social-icon.tt {
-        color: #00f2fe; /* Tosca khas TikTok */
+        color: #00f2fe; 
       }
 
       .social-icon.mail {
-        color: #ea4335; /* Merah khas Google/Email */
+        color: #ea4335;
       }
-
-      /* Warna Hijau khas WhatsApp */
+      
       .social-icon.wa {
         color: #25d366;
       }
 
-      /* Efek saat kursor diarahkan (Hover) */
+      /* Efek Hover */
       .social-icon:hover {
-        transform: scale(1.1); /* Membuat ukuran kotak membesar sedikit (10%) */
-        border-color: #19195c; /* Memunculkan garis tepi abu-abu terang seperti di foto */
+        transform: scale(1.1);
+        border-color: #19195c; 
       }
 
       /* HERO */
@@ -293,9 +287,7 @@
         position: relative;
       }
 
-      /* ==========================================================
-         TAMBAHAN: CSS SECTION KEMAMPUAN (4 LINGKARAN)
-         ========================================================== */
+      /* TAMBAHAN: SECTION KEMAMPUAN */
       .skills-section {
         padding: 6rem 7% 5rem;
         background: #07122b;
@@ -358,8 +350,7 @@
           138,
           206,
           252,
-          0.15
-        ); /* Transparan kebiruan senada primary */
+          0.15);
         border: 3px dashed var(--primary);
         border-radius: 50%;
         display: flex;
@@ -367,28 +358,25 @@
         align-items: center;
       }
 
-      /* Topeng khusus untuk memotong gambar agar tetap di dalam lingkaran */
       .circle-bg-mask {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        border-radius: 50%; /* Bikin bentuk bulat sempurna */
-        overflow: hidden; /* 👈 KUNCI UTAMA: Memotong bagian gambar yang meluber keluar */
-        z-index: 1; /* Di belakang teks */
+        border-radius: 50%; 
+        overflow: hidden; 
+        z-index: 1; 
       }
 
-      /* Mengatur gambar utama agar penuh */
       .center-bg-img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Biar gambar pas dan proporsional */
-        opacity: 0.5; /* Bikin agak transparan biar teks kelihatan */
+        object-fit: cover; 
+        opacity: 0.5; 
         pointer-events: none;
       }
-
-      /* Memastikan teks tetap berada di paling depan gambar */
+      
       .skills-circle-content {
         position: relative;
         z-index: 2;
@@ -408,7 +396,6 @@
         margin-top: 5px;
       }
 
-      /* Foto kecil sudut melingkar */
       .skill-photo {
         position: absolute;
         width: 110px;
@@ -444,9 +431,7 @@
         right: -15px;
       }
 
-      /* ==========================================================
-         RESPONSIVE DESIGN (TABLET & HP)
-         ========================================================== */
+      /* RESPONSIVE (TABLET & HP)*/
       @media (max-width: 1024px) {
         .hero {
           width: 95%;
@@ -484,7 +469,6 @@
           font-size: 1.4rem;
         }
 
-        /* Responsif Section Bulatan */
         .skills-wrapper {
           grid-template-columns: 1fr;
           gap: 40px;
@@ -644,8 +628,6 @@
       <div class="navbar-nav">
         <a href="index.html#">Home</a>
         <a href="index.html#about">About</a>
-
-        <!-- Profil -->
         <div class="dropdown">
           <a href="javascript:void(0);" class="dropbtn" id="profilBtn">
             Profil <i class="fas fa-chevron-down"></i>
@@ -660,8 +642,6 @@
             <a href="profil.emily.html"><i class="fas fa-user"></i> Emily</a>
           </div>
         </div>
-
-        <!-- Product -->
         <div class="dropdown">
           <a href="javascript:void(0);" class="dropbtn">
             Product <i class="fas fa-chevron-down"></i>
@@ -846,12 +826,9 @@
     <audio id="bg-music" loop preload="auto">
       <source src="music.mp3" type="audio/mpeg" />
     </audio>
-
-    <!-- SCRIPT PENTING: Letakkan di paling bawah sebelum </body> -->
+    
     <script>
       const audio = document.getElementById("bg-music");
-
-      // Fungsi untuk memutar musik dari posisi terakhir
       function playAudio() {
         const savedPosition = localStorage.getItem("audioPosition");
         if (savedPosition) {
@@ -859,18 +836,12 @@
         }
         audio.play().catch((e) => console.log("Menunggu interaksi user..."));
       }
-
-      // 1. Simpan posisi saat halaman akan pindah
       window.addEventListener("beforeunload", () => {
         localStorage.setItem("audioPosition", audio.currentTime);
       });
-
-      // 2. Play musik saat halaman dimuat
       window.addEventListener("load", () => {
         playAudio();
       });
-
-      // 3. Tambahan: Play saat user pertama kali klik di mana saja (Penting untuk Autoplay Policy)
       document.body.addEventListener(
         "click",
         () => {
