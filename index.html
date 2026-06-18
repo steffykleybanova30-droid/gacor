@@ -96,7 +96,7 @@
             Pastikan seragam sesuai dengan ketentuan yang berlaku! Mulai dari
             kelengkapan atribut hingga kesesuaian jadwal mingguan.
           </p>
-<a href="profil.html" class="cta-hero-btn">#Keep.Life.Organized.Clocked</a>
+          <a href="profil.html" class="cta-hero-btn">#Keep.Life.Organized.Clocked</a>
         </div>
 
         <div class="hero-content-right">
@@ -135,8 +135,7 @@
             Jakarta yang diakibatkan oleh kesalahan seragam.
           </p>
         </div>
-
-        <!-- Kotak 4: Kotak Aksi / Tombol Utama (Warna Oranye/Merah) -->
+        
         <div class="cta-card">
           <div>
             <h2>Cek Jadwal</h2>
@@ -150,11 +149,9 @@
         </div>
       </div>
     </section>
-
     <!-- Hero Section end -->
-
+    
     <!-- About Section start -->
-
     <section class="about-member">
       <h4>Our <span>Member</span></h4>
       <p>
@@ -197,19 +194,17 @@
         </div>
       </div>
     </section>
-
     <!-- About Section end -->
 
     <!-- Feather Icons -->
-
     <script src="https://unpkg.com/feather-icons"></script>
 
     <script>
       feather.replace();
     </script>
 
+    
     <!-- Contact bawah -->
-
     <footer id="contact" class="bg-footer">
       <div class="container">
         <div class="row">
@@ -237,11 +232,9 @@
             <i class="fab fa-instagram"></i>
           </a>
           <a
-            href="https://www.youtube.com/@sman71jakarta32
-"
+            href="https://www.youtube.com/@sman71jakarta32"
             target="_blank"
-            class="social-icon yt"
-          >
+            class="social-icon yt">
             <i class="fab fa-youtube"></i>
           </a>
 
@@ -260,11 +253,11 @@
               Jl. H. Dogol, Kavling TNI Angkatan Laut, RT 7/RW 16, Kelurahan
               Duren Sawit, Kecamatan Duren Sawit, Jakarta Timur, 13440.
             </p>
-
-<ul class="contact-list">
-  <li><i class="fas fa-phone"></i> Telp/Fax : (021) 8614112</li>
-  <li><i class="fas fa-envelope"></i> Email : smatujuhsatu@gmail.com</li>
-</ul>
+            
+            <ul class="contact-list">
+              <li><i class="fas fa-phone"></i> Telp/Fax : (021) 8614112</li>
+              <li><i class="fas fa-envelope"></i> Email : smatujuhsatu@gmail.com</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -275,11 +268,11 @@
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<!-- SCRIPT PENTING: Letakkan di paling bawah sebelum </body> -->
+<!-- SCRIPT -->
 <script>
   const audio = document.getElementById("bg-music");
 
-  // Fungsi untuk memutar musik dari posisi terakhir
+  // Musik
   function playAudio() {
     const savedPosition = localStorage.getItem("audioPosition");
     if (savedPosition) {
@@ -288,17 +281,14 @@
     audio.play().catch(e => console.log("Menunggu interaksi user..."));
   }
 
-  // 1. Simpan posisi saat halaman akan pindah
   window.addEventListener("beforeunload", () => {
     localStorage.setItem("audioPosition", audio.currentTime);
   });
 
-  // 2. Play musik saat halaman dimuat
   window.addEventListener("load", () => {
     playAudio();
   });
 
-  // 3. Tambahan: Play saat user pertama kali klik di mana saja (Penting untuk Autoplay Policy)
   document.body.addEventListener('click', () => {
     if (audio.paused) {
       playAudio();
@@ -307,7 +297,6 @@
 </script>
 
     <!-- My JavaScript -->
-
     <script src="js/script.js"></script>
   </body>
 </html>
