@@ -24,7 +24,6 @@
     <!-- My styles -->
     <link rel="stylesheet" href="styles.css" />
     <style>
-      /*background utama website*/
       body { 
         background-color: var(--bg); 
         display: block; 
@@ -61,9 +60,9 @@
 
         .hero-product .video-bg { 
          position: absolute; 
-         top: 50%;                  /* Posisikan titik awal di tengah vertikal */
-         left: 50%;                 /* Posisikan titik awal di tengah horizontal */
-         transform: translate(-50%, -50%); /* Geser mundur setengah ukuran video agar pas di tengah */
+         top: 50%;                  
+         left: 50%;                 
+         transform: translate(-50%, -50%); 
          width: 100%; 
          height: 100%;
          object-fit: cover;         
@@ -71,18 +70,11 @@
         }
 
         .video-bg {
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    rgba(0,0,0,1) 75%,
-    rgba(0,0,0,0) 100%
-  );
-
-  mask-image: linear-gradient(
-    to bottom,
-    rgba(0,0,0,1) 75%,
-    rgba(0,0,0,0) 100%
-  );
-}
+          -webkit-mask-image: linear-gradient(
+            to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+          mask-image: linear-gradient(
+            to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+        }
 
         .hero-product::after {
           content: "";
@@ -93,11 +85,8 @@
           width: 100%;
           height: 100%;
            z-index: 0;
-          }
+        }
 
-          
-      
-      /*Wadah Utama Aplikasi*/
       .main-card {
         background-color: rgba(43, 58, 85, 0.95);
         border-radius: 20px;
@@ -143,58 +132,48 @@
 
       /*Desain Kartu Seragam*/
       .kartu-seragam {
-  border-radius: 20px;
-  padding: 20px 15px;
-  cursor: pointer;
+        border-radius: 20px;
+        padding: 20px 15px;
+        cursor: pointer;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
 
-  width: 170px;
-  height: 230px;
-  box-sizing: border-box;
+        width: 170px;
+        height: 230px;
+        box-sizing: border-box;
+        border: 1px solid rgba(255,255,255,0.25);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.4);
+        backdrop-filter: blur(8px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
-  /* EFEK DIMENSI */
-  border: 1px solid rgba(255,255,255,0.25);
+      .kartu-seragam:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      
+      .kartu-seragam:nth-child(2) {
+        animation-delay: 0.3s;
+      }
 
-  box-shadow:
-    0 12px 25px rgba(0,0,0,0.25),
-    inset 0 1px 1px rgba(255,255,255,0.4);
+      .kartu-seragam:nth-child(3) {
+        animation-delay: 0.5s;
+      }
 
-  backdrop-filter: blur(8px);
+      .kartu-seragam:nth-child(4) {
+        animation-delay: 0.7s;
+      }
 
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-.kartu-seragam:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.kartu-seragam:nth-child(2) {
-  animation-delay: 0.3s;
-}
-
-.kartu-seragam:nth-child(3) {
-  animation-delay: 0.5s;
-}
-
-.kartu-seragam:nth-child(4) {
-  animation-delay: 0.7s;
-}
-
-.kartu-seragam:nth-child(5) {
-  animation-delay: 0.9s;
-}
+      .kartu-seragam:nth-child(5) {
+        animation-delay: 0.9s;
+      }
     
       .kartu-seragam:hover {
         transform: translateY(-10px) rotateX(1deg)rotateY(-1deg)scale(1.05);
-        box-shadow:
-  0 0 60px rgba(216, 255, 250, 0.9),
-  0 10px 25px rgba(185, 251, 255, 0.9);
+        box-shadow: 0 0 60px rgba(216, 255, 250, 0.9), 0 10px 25px rgba(185, 251, 255, 0.9);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
@@ -234,11 +213,11 @@
         margin-top: 1px;
       }
       
-.kartu-seragam:nth-child(5) img,
-.kartu-seragam:last-child img {
-  height: 120px;
-  margin-top: 3px;
-}
+      .kartu-seragam:nth-child(5) img,
+      .kartu-seragam:last-child img {
+        height: 120px;
+        margin-top: 3px;
+      }
 
       /* Bentuk teks kartu 5 */
       .kartu-seragam:nth-child(5) h3 {
@@ -346,122 +325,68 @@
       }
 
  /*KONDISI 1: Gambar kiri, deskripsi kanan (Default Desktop)*/
-.konten-bawah {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 35px;
-  width: 100%;
-  margin-top: 20px;
-}
+      .konten-bawah {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 35px;
+        width: 100%;
+        margin-top: 20px;
+      }
 
-.konten-bawah #deskripsi-seragam {
-  text-align: left; /* Teks otomatis rata kiri saat di samping gambar */
-  flex: 1;
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: #475569;
-  margin: 0;
-}
+      .konten-bawah #deskripsi-seragam {
+        text-align: left; 
+        flex: 1;
+        font-size: 1.15rem;
+        line-height: 1.6;
+        color: #475569;
+        margin: 0;
+      }
 
-#blok-gambar {
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-  justify-content: center;
-  flex-shrink: 0; /* Mencegah gambar gepeng/menyusut */
-}
+      #blok-gambar {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        justify-content: center;
+        flex-shrink: 0; 
+      }
 
 /*Gambar seragam hasil*/
-#gambar-seragam,
-#gambar-seragam-tambahan {
-  width: auto;
-  max-width: 260px; /* Ukuran pas bersanding dengan teks */
-  height: 250px;
-  border-radius: 12px;
-  margin: 0;
-  object-fit: contain;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
+      #gambar-seragam,
+      #gambar-seragam-tambahan {
+        width: auto;
+        max-width: 260px; 
+        height: 250px;
+        border-radius: 12px;
+        margin: 0;
+        object-fit: contain;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
 
 /*KONDISI 2: Khusus hari Kamis (Gambar berjejer, deskripsi bawah)*/
-.konten-bawah.layout-kamis {
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
+    .konten-bawah.layout-kamis {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
 
-.konten-bawah.layout-kamis #deskripsi-seragam {
-  text-align: center;
-  margin-top: 15px;
-  width: 100%;
-}
+    .konten-bawah.layout-kamis #deskripsi-seragam {
+      text-align: center;
+      margin-top: 15px;
+      width: 100%;
+    }
 
-.pembungkus-gambar {
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+   .pembungkus-gambar {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-/* --- MEDIA QUERIES (TAMPILAN RESPONSIVE LAYAR) --- */
-
-/* Tampilan untuk Tablet & HP (Maks 768px) */
-@media (max-width: 768px) {
-  .main-card {
-    padding: 20px;
-    margin: 60px auto 20px auto;
-  }
-  .main-card h1 {
-    font-size: 2.5rem; 
-  }
-  .subtitle {
-    font-size: 1.5rem;
-  }
-  .kartu-seragam {
-    width: 45%; 
-    height: 260px;
-  }
-
-  /* Saat di layar tablet/HP, otomatis susun kembali ke atas-bawah agar tidak sempit */
-  .konten-bawah {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .konten-bawah #deskripsi-seragam {
-    text-align: center;
-    width: 100%;
-  }
-  #gambar-seragam,
-  #gambar-seragam-tambahan {
-    max-width: 200px;
-    height: 200px;
-  }
-  #blok-gambar {
-    width: 100%;
-    flex-wrap: wrap;
-  }
-}
-
-/* Tampilan untuk HP Kecil (Maks 450px) */
-@media (max-width: 450px) {
-  .grid-seragam {
-    gap: 10px;
-  }
-  .kartu-seragam {
-    width: 100%;
-    height: 240px;
-  }
-  .kartu-seragam img {
-    height: 110px;
-  }
-}
-
-      /* --- ANIMASI MASUK (FADE IN & POP UP) --- */
-@keyframes munculTibaTiba {
-  0% {
+/* --- ANIMASI MASUK --- */
+@keyframes munculTibaTiba {0% {
     opacity: 0;
     transform: translateY(40px) scale(0.9);
   }
@@ -471,7 +396,7 @@
   }
 }
 
-/* --- ANIMASI MELAYANG (FLOATING EFFECT) --- */
+/* --- ANIMASI MELAYANG --- */
 @keyframes melayang {
   0%, 100% {
     transform: translateY(0);
@@ -514,8 +439,7 @@
     melayang 3.5s 1.2s ease-in-out infinite;
 }
 
-/* --- MODIFIKASI HOVER (SAAT KURSOR DI ATAS KOTAK) --- */
-/* Agar saat di-hover efek melayangnya berhenti sejenak dan fokus ke efek zoom membesar */
+/* --- MODIFIKASI HOVER (kursor) --- */
 .kartu-seragam:hover {
   transform: scale(1.03);
   box-shadow:
@@ -540,12 +464,9 @@
   display: block;
 }
 
-
 /* --- GAME STYLE --- */
-
-/* --- UTAMA --- */
 .memory-wrapper {
-  position: relative; /* Kunci agar modal bisa menutupi wrapper */
+  position: relative; 
   width: 100%;
   max-width: 900px;
   margin: 60px auto;
@@ -611,8 +532,8 @@
 .card:hover { transform: scale(1.03); }
 .card.flipped { transform: rotateY(180deg); }
 .card.matched {
-    pointer-events: none; /* Kartu tidak bisa diklik lagi */
-    transform: rotateY(180deg); /* Memaksa kartu tetap terbuka */
+    pointer-events: none; 
+    transform: rotateY(180deg); 
 }
 
 .card-front, .card-back {
@@ -670,7 +591,7 @@
 }
 .btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #0284c7; }
 
-/* --- RESPONSIVITAS --- */
+/* --- TAMPILAN RESPONSIVE --- */
 @media (max-width: 768px) {
   .game-board { grid-template-columns: repeat(4, 1fr); }
 }
@@ -678,6 +599,58 @@
   .game-board { grid-template-columns: repeat(3, 1fr); gap: 8px; }
   .memory-wrapper { padding: 20px; margin: 20px auto; }
 }
+
+/* Tampilan untuk Tablet & HP (Maks 768px) */
+@media (max-width: 768px) {
+  .main-card {
+    padding: 20px;
+    margin: 60px auto 20px auto;
+  }
+  .main-card h1 {
+    font-size: 2.5rem; 
+  }
+  .subtitle {
+    font-size: 1.5rem;
+  }
+  .kartu-seragam {
+    width: 45%; 
+    height: 260px;
+  }
+
+  /* Tampilan Tablet */
+  .konten-bawah {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .konten-bawah #deskripsi-seragam {
+    text-align: center;
+    width: 100%;
+  }
+  #gambar-seragam,
+  #gambar-seragam-tambahan {
+    max-width: 200px;
+    height: 200px;
+  }
+  #blok-gambar {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+/* Tampilan untuk HP Maks. 450px */
+@media (max-width: 450px) {
+  .grid-seragam {
+    gap: 10px;
+  }
+  .kartu-seragam {
+    width: 100%;
+    height: 240px;
+  }
+  .kartu-seragam img {
+    height: 110px;
+  }
+}
+
 
 
     </style>
@@ -690,8 +663,6 @@
       <div class="navbar-nav">
         <a href="index.html#">Home</a>
         <a href="index.html#about">About</a>
-
-        <!-- Profil -->
         <div class="dropdown">
           <a href="javascript:void(0);" class="dropbtn" id="profilBtn">
             Profil <i class="fas fa-chevron-down"></i>
@@ -706,8 +677,6 @@
             <a href="profil.emily.html"><i class="fas fa-user"></i> Emily</a>
           </div>
         </div>
-
-        <!-- Product -->
         <div class="dropdown">
           <a href="javascript:void(0);" class="dropbtn">
             Product <i class="fas fa-chevron-down"></i>
@@ -797,15 +766,6 @@
           <option value="Jumat">Jumat</option>
         </select>
 
-        <input
-          type="number"
-          id="angka-tanggal"
-          min="1"
-          max="31"
-          placeholder="Tanggal (1-31)"
-          style="display: none; width: 145px"
-        />
-
         <label
           class="olahraga-label"
           id="wrapper-olahraga"
@@ -832,11 +792,11 @@
         </div>
       </div>
 
-    </div> <!-- PENUTUP MAIN CARD -->
+    </div> 
 
 <!-- MEMORY MATCH -->
-<div class="memory-wrapper">
-    <div class="game-intro">
+    <div class="memory-wrapper">
+      <div class="game-intro">
         <h3>Klock Challenge 🧠</h3>
         <p>Uji daya ingatmu dengan mencocokkan gambar seragam SMAN 71!<br>
         Temukan semua pasangan kartu dalam waktu secepat mungkin.<br>
@@ -900,7 +860,7 @@
 </div>
 
 
-    <!-- JavaScript untuk mengatur input tanggal berdasarkan pilihan hari -->
+    <!-- JavaScript mengatur input tanggal berdasarkan pilihan hari -->
     <script>
       function aturFiturInput() {
         const hari = document.getElementById("pilihan-hari").value;
@@ -974,13 +934,7 @@
 
         kotakHasil.style.display = "block";
 
-      // --- Transisi Otomatis scroll mulus ke kotak hasil ---
-        setTimeout(() => {
-        kotakHasil.scrollIntoView({ behavior: "smooth", block: "center" });
-         }, 100); 
-      }
-
-      //Fungsi untuk mendeteksi hari dan tanggal ganjil/genap
+      //Mendeteksi hari dan tanggal ganjil/genap
       function cekSeragamSmart() {
         const hari = document.getElementById("pilihan-hari").value;
         const tanggal = document.getElementById("angka-tanggal").value;
@@ -992,14 +946,14 @@
         const imgTambahan = document.getElementById("gambar-seragam-tambahan");
         const deskripsi = document.getElementById("deskripsi-seragam");
         const layoutKonten = document.getElementById("layout-konten");
+        
+      if (hari === "Kamis" && isOlahraga) {
+        layoutKonten.classList.add("layout-kamis");
+      } else {
+        layoutKonten.classList.remove("layout-kamis");
+      }
 
-if (hari === "Kamis" && isOlahraga) {
-  layoutKonten.classList.add("layout-kamis");
-} else {
-  layoutKonten.classList.remove("layout-kamis");
-}
-
-        //Validasi input wajib diisi
+        //Input wajib diisi
         if (hari === "") {
           alert("Silahkan pilih harinya dulu ya!");
           return;
@@ -1058,7 +1012,7 @@ if (hari === "Kamis" && isOlahraga) {
           }
         }
 
-        //Memunculkan kotak hasil setelah data diisi
+        //Memunculkan kotak hasil 
         kotakHasil.style.display = "block";
       
         // --- Transisi Otomatis scroll mulus ke kotak hasil ---
@@ -1273,19 +1227,14 @@ startGame();
 
 <!-- Dropdown Script -->
 <script>
-// tutup dropdown saat klik di luar
 window.addEventListener("click", function () {
   document.querySelectorAll(".dropdown").forEach(drop => {
     drop.classList.remove("active");
   });
 });
-
-// buka dropdown saat tombol diklik
 document.querySelectorAll(".dropbtn").forEach(btn => {
   btn.addEventListener("click", function (e) {
     e.stopPropagation();
-
-    // tutup dropdown lain
     document.querySelectorAll(".dropdown").forEach(drop => {
       if (drop !== this.parentElement) {
         drop.classList.remove("active");
@@ -1297,7 +1246,7 @@ document.querySelectorAll(".dropbtn").forEach(btn => {
 });
 </script>
 
-<!--SCRIPT: AUDIO -->
+<!-- AUDIO -->
 <script>
   const audio = document.getElementById("bg-music");
   function playAudio() {
